@@ -1,0 +1,1421 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Coursette</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Coursette Project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-5.3.3/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+</head>
+<body>
+
+<div class="super_container">
+    <!-- Header -->
+	<header class="header">
+        <div class="d-flex flex-row align-items-center justify-content-start">
+            <div class="logo_container">
+                <a href="/home/">
+                    <div class="d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo"><img src="{% static 'images/logo_36.png' %}" alt="Coursette Logo png w36px h36px"></div>
+                        <div class="logo_text">Coursette</div>
+                    </div>
+                </a>
+            </div>
+            <nav class="main_nav">
+                <ul class="d-flex flex-row align-items-center">
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/courses/">Courses</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="d-flex flex-row align-items-end">
+                            <span>Pages</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-346.85 253.85-573 291-610.15l189 189 189-189L706.15-573 480-346.85Z"/></svg>
+                        </a>
+                        <div class="dropdown_panel_outer">
+                            <ul class="dropdown_panel trans_200">
+                                <li><a href="/home/">Home</a></li>
+                                <li><a href="/about/">About</a></li>
+                                <li><a href="/courses/">Courses</a></li>
+                                <li><a href="/course/">Course Details</a></li>
+                                <li><a href="/blog/">Blog</a></li>
+                                <li><a href="/blog_single/">Blog Details</a></li>
+                                <li><a href="/contact/">Contact</a></li>
+                                <li><a href="/login/">Sign in</a></li>
+                            </ul>
+                        </div> 
+                    </li>
+                    <li><a href="/blog/">Blog</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header_right d-flex flex-row align-items-center justify-content-end">
+                <div class="header_search_container">
+                    <form class="header_search_form" action="#">
+                        <div>
+                            <input id="header_search_input" class="search_input" type="text" placeholder="What would you like to learn?">
+                            <button class="header_search_btn" type="button"><img src="{% static 'images/icon_search.png' %}" alt=""></button>
+                            <div class="header_search_suggestions_container search_suggestions_container trans_200">
+                                <div>
+                                    <p>Recently visited</p>
+                                    <div class="recent_search_items">
+                                        <div class="recent_search_item d-flex flex-row align-items-center">
+                                            <a href="/course/"></a>
+                                            <div class="recent_search_item_pic"><img src="{% static 'images/search_result_pic.jpg' %}" alt=""></div>
+                                            <p>Project Management Course</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p>Top searches</p>
+                                    <div class="top_searches">
+                                        <div class="top_search d-flex flex-row align-items-center">
+                                            <img src="{% static 'images/search_icon_sm.png' %}" alt="">
+                                            <a href="/course/">Robotics course</a>
+                                        </div>
+                                        <div class="top_search d-flex flex-row align-items-center">
+                                            <img src="{% static 'images/search_icon_sm.png' %}" alt="">
+                                            <a href="/course/">Generative AI</a>
+                                        </div>
+                                        <div class="top_search d-flex flex-row align-items-center">
+                                            <img src="{% static 'images/search_icon_sm.png' %}" alt="">
+                                            <a href="/course/">Machine Learning</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="header_controls d-flex flex-row align-items-center">
+                    <!-- Fav Button -->
+                    <div class="header_controls_btn header_favs trans_200">
+                        <a class="d-flex flex-row align-items-center justify-content-center" href="/courses/">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24"><path class="st0" d="M12,20.78l-0.84-0.76c-1.81-1.66-3.31-3.07-4.5-4.25c-1.19-1.18-2.12-2.22-2.81-3.12 c-0.69-0.9-1.17-1.72-1.44-2.45C2.14,9.47,2,8.74,2,8c0-1.41,0.48-2.6,1.44-3.56C4.4,3.48,5.59,3,7,3c0.98,0,1.89,0.25,2.75,0.75 S11.36,4.98,12,5.93c0.64-0.95,1.39-1.68,2.25-2.18S16.02,3,17,3c1.41,0,2.6,0.48,3.56,1.44C21.52,5.4,22,6.59,22,8 c0,0.74-0.14,1.47-0.41,2.2c-0.27,0.73-0.75,1.54-1.44,2.45c-0.69,0.9-1.62,1.94-2.8,3.12c-1.18,1.18-2.68,2.6-4.51,4.25L12,20.78z M12,19.28c1.78-1.61,3.24-2.98,4.39-4.13c1.15-1.15,2.06-2.14,2.72-2.98c0.67-0.84,1.13-1.59,1.39-2.24 c0.26-0.65,0.39-1.29,0.39-1.93c0-1.11-0.37-2.04-1.11-2.78C19.04,4.48,18.11,4.11,17,4.11c-0.88,0-1.7,0.25-2.45,0.76 c-0.75,0.51-1.42,1.27-2.01,2.28h-1.09c-0.61-1.03-1.28-1.79-2.02-2.29C8.7,4.36,7.88,4.11,7,4.11c-1.1,0-2.02,0.37-2.77,1.11 C3.49,5.96,3.11,6.89,3.11,8c0,0.63,0.13,1.28,0.39,1.93c0.26,0.65,0.72,1.4,1.39,2.24S6.46,14,7.61,15.14S10.22,17.66,12,19.28z"/></svg>
+                        </a>
+                    </div>
+                    <!-- Cart Button -->
+                    <div class="header_controls_btn header_cart trans_200">
+                        <a class="d-flex flex-row align-items-center justify-content-center" href="/courses/">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24"><path class="st0" d="M8.04,22c-0.48,0-0.89-0.16-1.21-0.47c-0.33-0.31-0.49-0.69-0.49-1.15c0-0.45,0.16-0.84,0.49-1.15 c0.33-0.31,0.73-0.47,1.21-0.47s0.88,0.16,1.21,0.47c0.33,0.31,0.49,0.69,0.49,1.15c0,0.45-0.16,0.83-0.49,1.15 C8.93,21.84,8.52,22,8.04,22z M18.73,22c-0.48,0-0.88-0.16-1.21-0.47c-0.33-0.31-0.49-0.69-0.49-1.15c0-0.45,0.16-0.84,0.49-1.15 c0.33-0.31,0.73-0.47,1.21-0.47s0.89,0.16,1.21,0.47c0.33,0.31,0.49,0.69,0.49,1.15c0,0.45-0.16,0.83-0.49,1.15 C19.61,21.84,19.21,22,18.73,22z M6.42,5.22l3.04,6.03h7.55c0.13,0,0.25-0.03,0.35-0.09c0.1-0.06,0.19-0.15,0.26-0.26l2.98-5.1 c0.09-0.15,0.09-0.29,0.02-0.4c-0.07-0.12-0.2-0.18-0.37-0.18C20.25,5.22,6.42,5.22,6.42,5.22z M5.86,4.15h14.82 c0.49,0,0.87,0.19,1.12,0.57c0.25,0.38,0.26,0.77,0.04,1.18l-3.25,5.59c-0.16,0.26-0.38,0.47-0.64,0.62 c-0.26,0.15-0.55,0.22-0.87,0.22H8.95l-1.38,2.4c-0.12,0.17-0.12,0.34-0.01,0.54c0.11,0.19,0.27,0.29,0.49,0.29h12.39v1.07H8.04 c-0.66,0-1.16-0.26-1.49-0.79s-0.34-1.06-0.02-1.59l1.71-2.88L4.06,3.07H2V2h2.78L5.86,4.15z M9.46,11.26h7.97H9.46z"/></svg>
+                        </a>
+                        <div class="header_cart_count_container"><span>2</span></div>
+                        <!-- Shopping Cart Hover -->
+                        <div class="cart_hover_panel">
+                            <div></div>
+                            <div>
+                                <p>Your Shopping Cart</p>
+                                <div class="hover_cart_list">
+                                    <!-- Hover cart item -->
+                                    <div class="hover_cart_item d-flex flex-row align-items-center">
+                                        <div class="hover_card_item_pic"><img src="{% static 'images/cart_1.jpg' %}" alt=""></div>
+                                        <div class="hover_card_item_content">
+                                            <a href="/course/">Python For Data Science</a>
+                                            <p>by Coursette</p>
+                                            <p>$123,00</p>
+                                        </div>
+                                    </div>
+                                    <!-- Hover cart item -->
+                                    <div class="hover_cart_item d-flex flex-row align-items-center">
+                                        <div class="hover_card_item_pic"><img src="{% static 'images/cart_2.jpg' %}" alt=""></div>
+                                        <div class="hover_card_item_content">
+                                            <a href="/course/">Poetry Course</a>
+                                            <p>by Coursette</p>
+                                            <p>$237,00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hover_cart_total">
+                                    <p>Total: <span>$360,00</span></p>
+                                </div>
+                                <div class="hover_cart_button_container">
+                                    <div class="button_fill hover_cart_button trans_200">
+                                        <a href="/courses/">
+                                            <div class="d-flex flex-row align-items-center justify-content-center">
+                                                <span>Go to cart</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User Button -->
+                    <div class="header_controls_btn header_user trans_200">
+                        <a class="d-flex flex-row align-items-center justify-content-center" href="/login/">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 24 24"><path class="st0" d="M12,10.77c-1.11,0-2.06-0.41-2.85-1.22C8.36,8.75,7.97,7.77,7.97,6.64s0.39-2.11,1.18-2.92C9.94,2.91,10.89,2.5,12,2.5s2.06,0.41,2.85,1.22c0.79,0.81,1.18,1.78,1.18,2.92s-0.39,2.11-1.18,2.92 C14.06,10.37,13.11,10.77,12,10.77z M2,21.5v-1.99c0-0.56,0.17-1.09,0.5-1.59s0.79-0.89,1.36-1.17c1.37-0.66,2.73-1.16,4.09-1.49 c1.36-0.33,2.71-0.5,4.05-0.5s2.69,0.17,4.05,0.5c1.36,0.33,2.72,0.83,4.09,1.49c0.57,0.28,1.03,0.67,1.36,1.17s0.5,1.03,0.5,1.59 v1.99H2z M3.04,20.43h17.91v-0.92c0-0.36-0.12-0.7-0.35-1.02c-0.24-0.32-0.57-0.59-0.99-0.82c-1.19-0.59-2.43-1.04-3.72-1.36 c-1.29-0.32-2.58-0.48-3.89-0.48s-2.61,0.16-3.89,0.48c-1.29,0.32-2.53,0.77-3.72,1.36c-0.42,0.23-0.75,0.5-0.99,0.82 c-0.24,0.32-0.35,0.66-0.35,1.02V20.43z M12,9.7c0.82,0,1.52-0.3,2.11-0.9c0.58-0.6,0.88-1.32,0.88-2.16s-0.29-1.56-0.88-2.16 c-0.58-0.6-1.29-0.9-2.11-0.9s-1.52,0.3-2.11,0.9S9.01,5.79,9.01,6.64S9.31,8.2,9.89,8.8C10.48,9.4,11.18,9.7,12,9.7z"/></svg>
+                        </a>
+                    </div>
+                    <!-- Hamburger -->
+                    <div class="header_controls_btn header_hamburger trans_200 d-flex flex-row align-items-center justify-content-center">
+                        <svg version="1.1" id="menu_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 16" style="enable-background:new 0 0 20 16;" xml:space="preserve"><g><rect x="0.5" y="0.5" class="st0" width="19" height="1"/><polygon points="20,0 0,0 0,2 20,2 20,0 	"/></g><g><rect x="0.5" y="7.5" class="st0" width="19" height="1"/><polygon points="20,7 0,7 0,9 20,9 20,7 	"/></g><g><rect x="0.5" y="14.5" class="st0" width="19" height="1"/><polygon points="20,14 0,14 0,16 20,16 20,14 	"/></g></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menu -->
+
+    <div class="menu">
+        <div class="menu_section menu_cart">
+            <a href="#"></a>
+            <div class="d-flex flex-row align-items-center">
+                <div class="menu_section_icon d-flex flex-column justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M286.15-97.69q-29.15 0-49.57-20.43-20.42-20.42-20.42-49.57 0-29.16 20.42-49.58 20.42-20.42 49.57-20.42 29.16 0 49.58 20.42 20.42 20.42 20.42 49.58 0 29.15-20.42 49.57-20.42 20.43-49.58 20.43Zm387.7 0q-29.16 0-49.58-20.43-20.42-20.42-20.42-49.57 0-29.16 20.42-49.58 20.42-20.42 49.58-20.42 29.15 0 49.57 20.42t20.42 49.58q0 29.15-20.42 49.57Q703-97.69 673.85-97.69ZM240.61-730 342-517.69h272.69q3.46 0 6.16-1.73 2.69-1.73 4.61-4.81l107.31-195q2.31-4.23.38-7.5-1.92-3.27-6.54-3.27h-486Zm-28.76-60h555.38q24.54 0 37.11 20.89 12.58 20.88 1.2 42.65L677.38-494.31q-9.84 17.31-26.03 26.96-16.2 9.66-35.5 9.66H324l-46.31 84.61q-3.08 4.62-.19 10 2.88 5.39 8.65 5.39h457.69v60H286.15q-40 0-60.11-34.5-20.12-34.5-1.42-68.89l57.07-102.61L136.16-810H60v-60h113.85l38 80ZM342-517.69h280-280Z"/></svg>
+                </div>
+                <p>Your cart</p>
+            </div>
+        </div>
+        <div class="menu_section menu_favs">
+            <a href="#"></a>
+            <div class="d-flex flex-row align-items-center">
+                <div class="menu_section_icon d-flex flex-column justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m480-146.93-44.15-39.69q-99.46-90.23-164.5-155.07-65.04-64.85-103.08-115.43-38.04-50.57-53.15-92.27Q100-591.08 100-634q0-85.15 57.42-142.58Q214.85-834 300-834q52.38 0 99 24.5t81 70.27q34.38-45.77 81-70.27 46.62-24.5 99-24.5 85.15 0 142.58 57.42Q860-719.15 860-634q0 42.92-15.12 84.61-15.11 41.7-53.15 92.27-38.04 50.58-102.89 115.43Q624-276.85 524.15-186.62L480-146.93Zm0-81.07q96-86.38 158-148.08 62-61.69 98-107.19t50-80.81q14-35.3 14-69.92 0-60-40-100t-100-40q-47.38 0-87.58 26.88-40.19 26.89-63.65 74.81h-57.54q-23.85-48.31-63.85-75Q347.38-774 300-774q-59.62 0-99.81 40Q160-694 160-634q0 34.62 14 69.92 14 35.31 50 80.81t98 107q62 61.5 158 148.27Zm0-273Z"/></svg>
+                </div>
+                <p>Your favorites</p>
+            </div>
+        </div>
+        <div class="menu_section menu_search">
+            <div class="d-flex flex-row align-items-center">
+                <div class="menu_section_icon d-flex flex-column justify-content-center align-items-center">
+                    <img src="{% static 'images/looking_glass.png' %}" alt="">
+                </div>
+                <p>Search</p>
+            </div>
+        </div>
+        <div class="menu_section menu_settings">
+            <a href="#"></a>
+            <div class="d-flex flex-row align-items-center">
+                <div class="menu_section_icon d-flex flex-column justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m387.69-100-15.23-121.85q-16.07-5.38-32.96-15.07-16.88-9.7-30.19-20.77L196.46-210l-92.3-160 97.61-73.77q-1.38-8.92-1.96-17.92-.58-9-.58-17.93 0-8.53.58-17.34t1.96-19.27L104.16-590l92.3-159.23 112.46 47.31q14.47-11.46 30.89-20.96t32.27-15.27L387.69-860h184.62l15.23 122.23q18 6.54 32.57 15.27 14.58 8.73 29.43 20.58l114-47.31L855.84-590l-99.15 74.92q2.15 9.69 2.35 18.12.19 8.42.19 16.96 0 8.15-.39 16.58-.38 8.42-2.76 19.27L854.46-370l-92.31 160-112.61-48.08q-14.85 11.85-30.31 20.96-15.46 9.12-31.69 14.89L572.31-100H387.69ZM440-160h78.62L533-267.15q30.62-8 55.96-22.73 25.35-14.74 48.89-37.89L737.23-286l39.39-68-86.77-65.38q5-15.54 6.8-30.47 1.81-14.92 1.81-30.15 0-15.62-1.81-30.15-1.8-14.54-6.8-29.7L777.38-606 738-674l-100.54 42.38q-20.08-21.46-48.11-37.92-28.04-16.46-56.73-23.31L520-800h-79.38l-13.24 106.77q-30.61 7.23-56.53 22.15-25.93 14.93-49.47 38.46L222-674l-39.38 68L269-541.62q-5 14.24-7 29.62t-2 32.38q0 15.62 2 30.62 2 15 6.62 29.62l-86 65.38L222-286l99-42q22.77 23.38 48.69 38.31 25.93 14.92 57.31 22.92L440-160Zm40.46-200q49.92 0 84.96-35.04 35.04-35.04 35.04-84.96 0-49.92-35.04-84.96Q530.38-600 480.46-600q-50.54 0-85.27 35.04T360.46-480q0 49.92 34.73 84.96Q429.92-360 480.46-360ZM480-480Z"/></svg>
+                </div>
+                <p>Settings</p>
+            </div>
+        </div>
+        <div class="menu_section menu_nav">
+            <p>Navigation</p>
+            <ul>
+                <li><a href="/home/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/courses/">Courses</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li><a href="/contact/">Contact</a></li>
+            </ul>
+        </div>
+        <div class="menu_section menu_social">
+            <!-- Social Links -->
+            <div class="social_links_container d-flex flex-row">
+                <div>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50"><path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path></svg>
+                    </a> 
+                </div>
+                <div>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512"><g><polygon points="153.2,135.6 322,377 358.6,377 189.8,135.6"/><path d="M256,20.6C126,20.6,20.6,126,20.6,256S126,491.4,256,491.4S491.4,386,491.4,256S386,20.6,256,20.6z M310.7,394.2 l-73.8-107.4l-92.4,107.4h-23.9l105.7-122.8L120.7,117.6h80.6l69.9,101.7l87.5-101.7h23.9L281.7,234.7h0l109.6,159.5H310.7z"/></g></svg>
+                    </a> 
+                </div>
+                <div>
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50"><path d="M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23s23-10.317,23-23S37.682,2,25,2z M18,35h-4V20h4V35z M16,17 c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2s2,0.895,2,2C18,16.105,17.105,17,16,17z M37,35h-4v-5v-2.5c0-1.925-1.575-3.5-3.5-3.5 S26,25.575,26,27.5V35h-4V20h4v1.816C27.168,20.694,28.752,20,30.5,20c3.59,0,6.5,2.91,6.5,6.5V35z"></path></svg>
+                    </a> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Panel (Tablet and smaller) -->
+    <div class="search_panel">
+        <div class="search_panel_form_container">
+            <form class="header_search_form" action="#">
+                <div>
+                    <input id="header_search_input_sm" class="search_input" type="text" placeholder="What would you like to learn?">
+                    <button class="header_search_btn" type="button"><img src="{% static 'images/icon_search.png' %}" alt=""></button>
+                    <div class="search_suggestions_container trans_200">
+                        <div>
+                            <p>Recently visited</p>
+                            <div class="recent_search_items">
+                                <div class="recent_search_item d-flex flex-row align-items-center">
+                                    <a href="/course/"></a>
+                                    <div class="recent_search_item_pic"><img src="{% static 'images/search_result_pic.jpg' %}" alt=""></div>
+                                    <p>Project Management Course</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Top searches</p>
+                            <div class="top_searches">
+                                <div class="top_search d-flex flex-row align-items-center">
+                                    <img src="{% static 'images/search_icon_sm.png' %}" alt="">
+                                    <a href="/course/">Robotics course</a>
+                                </div>
+                                <div class="top_search d-flex flex-row align-items-center">
+                                    <img src="{% static 'images/search_icon_sm.png' %}" alt="">
+                                    <a href="/course/">Generative AI</a>
+                                </div>
+                                <div class="top_search d-flex flex-row align-items-center">
+                                    <img src="{% static 'images/search_icon_sm.png' %}" alt="">
+                                    <a href="/course/">Machine Learning</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Home -->
+    <div class="home">
+        <div class="home_outer grad_light">
+            <div class="home_inner">
+                <div class="home_container d-flex flex-row align-items-center justify-content-center">
+                    <div class="home_content_left home_content">
+                        <h1 class="home_title">Unlock Your Potential With Coursette</h1>
+                        <p class="home_description">Expand your knowledge and skills with our wide range of amazing courses.</p>
+                        <div class="home_button trans_200" id="home_button">
+                            <div class="d-flex flex-row align-items-center">
+                                <span>Start Learning</span>
+                                <div class="arrow_box d-flex flex-row align-items-center justify-content-center">
+                                    <img class="arrow center" src="{% static 'images/hero_arrow_down_blue_2.png' %}" alt="Simple down arrow.">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="home_content_right home_content d-flex flex-row align-items-center justify-content-center">
+                        <div class="home_image">
+                            <div class="home_stats home_stats_1">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div class="home_stats_user"><div><img src="{% static 'images/user_1.jpg' %}" alt="User pic."></div></div>
+                                    <div class="home_stats_user"><div><img src="{% static 'images/user_2.jpg' %}" alt="User pic."></div></div>
+                                    <div class="home_stats_user"><div><img src="{% static 'images/user_3.jpg' %}" alt="User pic."></div></div>
+                                    <div class="home_stats_button trans_200">
+                                        <a href="#">
+                                            <div class="d-flex flex-row align-items-center justify-content-center"><img class="trans_200" src="{% static 'images/plus.png' %}" alt=""></div>
+                                        </a>
+                                    </div>
+                                    <div class="home_stats_content">
+                                        <div>275k+</div>
+                                        <div>Online Students</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="home_stats home_stats_2">
+                                <div class="d-flex flex-row align-items-center">
+                                    <div class="home_stats_icon_container d-flex flex-row align-items-center justify-content-center">
+                                        <img src="{% static 'images/hero_icon_1.png' %}" alt="">
+                                    </div>
+                                    <div class="home_stats_content">
+                                        <div>130+</div>
+                                        <div>Online Courses</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="{% static 'images/hero.png' %}" alt="Hero image">
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+    <!-- Popular Courses -->
+    <div class="popular">
+        <div class="container">
+            <div class="row">
+                <div class="section_title_container">
+                    <div class="section_subtitle">
+                        <div class="d-flex flex-row align-items-center">
+                            <img src="{% static 'images/subtitle_icon_1.png' %}" alt="">
+                            <span>Top Picks</span>
+                        </div>
+                    </div>
+                    <div class="section_title"><h2>Popular Courses</h2></div>
+                </div>
+            </div>
+            <div class="row course_cards_container section_content_row">
+                <div class="col">
+                    <div class="popular_courses_slider_container">
+                        <div class="owl-carousel owl-theme popular_courses_slider">
+
+                            <!-- Course Card -->
+                            <div class="item course_card_owl_item">
+                                <div class="course_card">
+                                    <div class="course_card_container">
+                                        <div class="course_card_top">
+                                            <div class="course_card_category trans_200"><a href="/courses/"><span>Design</span></a></div>
+                                            <div class="course_card_pic">
+                                                <img src="{% static 'images/course_01.jpg' %}" alt="">
+                                            </div>
+                                            <div class="course_card_content">
+                                                <div class="course_card_meta d-flex flex-row align-items-center">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M1.95,18.11c-0.53,0-0.99-0.19-1.37-0.58C0.19,17.15,0,16.7,0,16.17V3.83c0-0.55,0.19-1.01,0.58-1.38 c0.38-0.38,0.84-0.56,1.37-0.56h12.33c0.54,0,1.01,0.19,1.38,0.56c0.38,0.38,0.56,0.84,0.56,1.38v5.18L20,5.24v9.53l-3.78-3.78v5.18 c0,0.53-0.19,0.99-0.56,1.37c-0.38,0.38-0.84,0.58-1.38,0.58H1.95z M1.95,16.54h12.33c0.11,0,0.2-0.03,0.27-0.1 c0.07-0.07,0.11-0.16,0.11-0.27V3.83c0-0.11-0.04-0.2-0.11-0.27c-0.07-0.07-0.16-0.1-0.27-0.1H1.95c-0.11,0-0.2,0.03-0.27,0.1 c-0.07,0.07-0.1,0.16-0.1,0.27v12.33c0,0.11,0.03,0.2,0.1,0.27C1.75,16.5,1.84,16.54,1.95,16.54z M1.57,16.54V3.46V16.54z"/></svg>
+                                                        <span>video course</span>
+                                                    </div>
+                                                    <div class="dot"></div>
+                                                    <span>15 lessons</span>
+                                                </div>
+                                                <div class="course_card_title"><h3>Analytics Introduction</h3></div>
+                                                <div class="course_card_author"><span>by </span><a href="#">Coursette</a></div>
+                                                <div class="course_card_rating d-flex flex-row align-items-center">
+                                                    <span>4.2</span>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_empty_1.png' %}" alt=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course_card_bottom trans_200 d-flex flex-row align-items-center">
+                                            <div class="course_card_price">$37,00</div>
+                                            <div class="course_card_link ms-auto d-flex flex-row align-items-center">
+                                                <a href="/course/">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path class="trans_200" d="M301.08-597.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08ZM192.31-595.38q-10.73 0-19.52-8.9t-8.79-20.3q0-11.06 8.79-19.24 8.79-8.18 20.02-8.18t19.52 8.03q8.29 8.03 8.29 19.89 0 10.9-8.14 19.8t-20.17 8.9Zm0 143.3q-10.73 0-19.52-8.68-8.79-8.67-8.79-19.74 0-11.81 8.79-20t20.02-8.19q11.23 0 19.52 8.04t8.29 20.65q0 10.57-8.14 19.24-8.14 8.68-20.17 8.68Zm0 144.08q-10.73 0-19.52-8.9T164-337.19q0-11.07 8.79-19.25t20.02-8.18q11.23 0 19.52 8.03t8.29 19.9q0 10.89-8.14 19.79-8.14 8.9-20.17 8.9Z"/></svg>
+                                                        <span class="trans_200">Details</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Course Card -->
+                            <div class="item course_card_owl_item">
+                                <div class="course_card">
+                                    <div class="course_card_container">
+                                        <div class="course_card_top">
+                                            <div class="course_card_category trans_200"><a href="/courses/"><span>Design</span></a></div>
+                                            <div class="course_card_pic">
+                                                <img src="{% static 'images/course_02.jpg' %}" alt="">
+                                            </div>
+                                            <div class="course_card_content">
+                                                <div class="course_card_meta d-flex flex-row align-items-center">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M1.95,18.11c-0.53,0-0.99-0.19-1.37-0.58C0.19,17.15,0,16.7,0,16.17V3.83c0-0.55,0.19-1.01,0.58-1.38 c0.38-0.38,0.84-0.56,1.37-0.56h12.33c0.54,0,1.01,0.19,1.38,0.56c0.38,0.38,0.56,0.84,0.56,1.38v5.18L20,5.24v9.53l-3.78-3.78v5.18 c0,0.53-0.19,0.99-0.56,1.37c-0.38,0.38-0.84,0.58-1.38,0.58H1.95z M1.95,16.54h12.33c0.11,0,0.2-0.03,0.27-0.1 c0.07-0.07,0.11-0.16,0.11-0.27V3.83c0-0.11-0.04-0.2-0.11-0.27c-0.07-0.07-0.16-0.1-0.27-0.1H1.95c-0.11,0-0.2,0.03-0.27,0.1 c-0.07,0.07-0.1,0.16-0.1,0.27v12.33c0,0.11,0.03,0.2,0.1,0.27C1.75,16.5,1.84,16.54,1.95,16.54z M1.57,16.54V3.46V16.54z"/></svg>
+                                                        <span>video course</span>
+                                                    </div>
+                                                    <div class="dot"></div>
+                                                    <span>15 lessons</span>
+                                                </div>
+                                                <div class="course_card_title"><h3>Python For Data Science</h3></div>
+                                                <div class="course_card_author"><span>by </span><a href="#">Coursette</a></div>
+                                                <div class="course_card_rating d-flex flex-row align-items-center">
+                                                    <span>4.2</span>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_empty_1.png' %}" alt=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course_card_bottom trans_200 d-flex flex-row align-items-center">
+                                            <div class="course_card_price">$160,00</div>
+                                            <div class="course_card_link ms-auto d-flex flex-row align-items-center">
+                                                <a href="/course/">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path class="trans_200" d="M301.08-597.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08ZM192.31-595.38q-10.73 0-19.52-8.9t-8.79-20.3q0-11.06 8.79-19.24 8.79-8.18 20.02-8.18t19.52 8.03q8.29 8.03 8.29 19.89 0 10.9-8.14 19.8t-20.17 8.9Zm0 143.3q-10.73 0-19.52-8.68-8.79-8.67-8.79-19.74 0-11.81 8.79-20t20.02-8.19q11.23 0 19.52 8.04t8.29 20.65q0 10.57-8.14 19.24-8.14 8.68-20.17 8.68Zm0 144.08q-10.73 0-19.52-8.9T164-337.19q0-11.07 8.79-19.25t20.02-8.18q11.23 0 19.52 8.03t8.29 19.9q0 10.89-8.14 19.79-8.14 8.9-20.17 8.9Z"/></svg>
+                                                        <span class="trans_200">Details</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Course Card -->
+                            <div class="item course_card_owl_item">
+                                <div class="course_card">
+                                    <div class="course_card_container">
+                                        <div class="course_card_top">
+                                            <div class="course_card_category trans_200"><a href="/courses/"><span>Design</span></a></div>
+                                            <div class="course_card_pic">
+                                                <img src="{% static 'images/course_03.jpg' %}" alt="">
+                                            </div>
+                                            <div class="course_card_content">
+                                                <div class="course_card_meta d-flex flex-row align-items-center">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M1.95,18.11c-0.53,0-0.99-0.19-1.37-0.58C0.19,17.15,0,16.7,0,16.17V3.83c0-0.55,0.19-1.01,0.58-1.38 c0.38-0.38,0.84-0.56,1.37-0.56h12.33c0.54,0,1.01,0.19,1.38,0.56c0.38,0.38,0.56,0.84,0.56,1.38v5.18L20,5.24v9.53l-3.78-3.78v5.18 c0,0.53-0.19,0.99-0.56,1.37c-0.38,0.38-0.84,0.58-1.38,0.58H1.95z M1.95,16.54h12.33c0.11,0,0.2-0.03,0.27-0.1 c0.07-0.07,0.11-0.16,0.11-0.27V3.83c0-0.11-0.04-0.2-0.11-0.27c-0.07-0.07-0.16-0.1-0.27-0.1H1.95c-0.11,0-0.2,0.03-0.27,0.1 c-0.07,0.07-0.1,0.16-0.1,0.27v12.33c0,0.11,0.03,0.2,0.1,0.27C1.75,16.5,1.84,16.54,1.95,16.54z M1.57,16.54V3.46V16.54z"/></svg>
+                                                        <span>video course</span>
+                                                    </div>
+                                                    <div class="dot"></div>
+                                                    <span>15 lessons</span>
+                                                </div>
+                                                <div class="course_card_title"><h3>Machine Learning Course</h3></div>
+                                                <div class="course_card_author"><span>by </span><a href="#">Coursette</a></div>
+                                                <div class="course_card_rating d-flex flex-row align-items-center">
+                                                    <span>4.2</span>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_empty_1.png' %}" alt=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course_card_bottom trans_200 d-flex flex-row align-items-center">
+                                            <div class="course_card_price">$64,00</div>
+                                            <div class="course_card_link ms-auto d-flex flex-row align-items-center">
+                                                <a href="/course/">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path class="trans_200" d="M301.08-597.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08ZM192.31-595.38q-10.73 0-19.52-8.9t-8.79-20.3q0-11.06 8.79-19.24 8.79-8.18 20.02-8.18t19.52 8.03q8.29 8.03 8.29 19.89 0 10.9-8.14 19.8t-20.17 8.9Zm0 143.3q-10.73 0-19.52-8.68-8.79-8.67-8.79-19.74 0-11.81 8.79-20t20.02-8.19q11.23 0 19.52 8.04t8.29 20.65q0 10.57-8.14 19.24-8.14 8.68-20.17 8.68Zm0 144.08q-10.73 0-19.52-8.9T164-337.19q0-11.07 8.79-19.25t20.02-8.18q11.23 0 19.52 8.03t8.29 19.9q0 10.89-8.14 19.79-8.14 8.9-20.17 8.9Z"/></svg>
+                                                        <span class="trans_200">Details</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Course Card -->
+                            <div class="item course_card_owl_item">
+                                <div class="course_card">
+                                    <div class="course_card_container">
+                                        <div class="course_card_top">
+                                            <div class="course_card_category trans_200"><a href="/courses/"><span>Design</span></a></div>
+                                            <div class="course_card_pic">
+                                                <img src="{% static 'images/course_04.jpg' %}" alt="">
+                                            </div>
+                                            <div class="course_card_content">
+                                                <div class="course_card_meta d-flex flex-row align-items-center">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M1.95,18.11c-0.53,0-0.99-0.19-1.37-0.58C0.19,17.15,0,16.7,0,16.17V3.83c0-0.55,0.19-1.01,0.58-1.38 c0.38-0.38,0.84-0.56,1.37-0.56h12.33c0.54,0,1.01,0.19,1.38,0.56c0.38,0.38,0.56,0.84,0.56,1.38v5.18L20,5.24v9.53l-3.78-3.78v5.18 c0,0.53-0.19,0.99-0.56,1.37c-0.38,0.38-0.84,0.58-1.38,0.58H1.95z M1.95,16.54h12.33c0.11,0,0.2-0.03,0.27-0.1 c0.07-0.07,0.11-0.16,0.11-0.27V3.83c0-0.11-0.04-0.2-0.11-0.27c-0.07-0.07-0.16-0.1-0.27-0.1H1.95c-0.11,0-0.2,0.03-0.27,0.1 c-0.07,0.07-0.1,0.16-0.1,0.27v12.33c0,0.11,0.03,0.2,0.1,0.27C1.75,16.5,1.84,16.54,1.95,16.54z M1.57,16.54V3.46V16.54z"/></svg>
+                                                        <span>video course</span>
+                                                    </div>
+                                                    <div class="dot"></div>
+                                                    <span>15 lessons</span>
+                                                </div>
+                                                <div class="course_card_title"><h3>Analytics Introduction</h3></div>
+                                                <div class="course_card_author"><span>by </span><a href="#">Coursette</a></div>
+                                                <div class="course_card_rating d-flex flex-row align-items-center">
+                                                    <span>4.2</span>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_empty_1.png' %}" alt=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course_card_bottom trans_200 d-flex flex-row align-items-center">
+                                            <div class="course_card_price">$37,00</div>
+                                            <div class="course_card_link ms-auto d-flex flex-row align-items-center">
+                                                <a href="/course/">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path class="trans_200" d="M301.08-597.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08ZM192.31-595.38q-10.73 0-19.52-8.9t-8.79-20.3q0-11.06 8.79-19.24 8.79-8.18 20.02-8.18t19.52 8.03q8.29 8.03 8.29 19.89 0 10.9-8.14 19.8t-20.17 8.9Zm0 143.3q-10.73 0-19.52-8.68-8.79-8.67-8.79-19.74 0-11.81 8.79-20t20.02-8.19q11.23 0 19.52 8.04t8.29 20.65q0 10.57-8.14 19.24-8.14 8.68-20.17 8.68Zm0 144.08q-10.73 0-19.52-8.9T164-337.19q0-11.07 8.79-19.25t20.02-8.18q11.23 0 19.52 8.03t8.29 19.9q0 10.89-8.14 19.79-8.14 8.9-20.17 8.9Z"/></svg>
+                                                        <span class="trans_200">Details</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Course Card -->
+                            <div class="item course_card_owl_item">
+                                <div class="course_card">
+                                    <div class="course_card_container">
+                                        <div class="course_card_top">
+                                            <div class="course_card_category trans_200"><a href="/courses/"><span>Design</span></a></div>
+                                            <div class="course_card_pic">
+                                                <img src="{% static 'images/course_05.jpg' %}" alt="">
+                                            </div>
+                                            <div class="course_card_content">
+                                                <div class="course_card_meta d-flex flex-row align-items-center">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M1.95,18.11c-0.53,0-0.99-0.19-1.37-0.58C0.19,17.15,0,16.7,0,16.17V3.83c0-0.55,0.19-1.01,0.58-1.38 c0.38-0.38,0.84-0.56,1.37-0.56h12.33c0.54,0,1.01,0.19,1.38,0.56c0.38,0.38,0.56,0.84,0.56,1.38v5.18L20,5.24v9.53l-3.78-3.78v5.18 c0,0.53-0.19,0.99-0.56,1.37c-0.38,0.38-0.84,0.58-1.38,0.58H1.95z M1.95,16.54h12.33c0.11,0,0.2-0.03,0.27-0.1 c0.07-0.07,0.11-0.16,0.11-0.27V3.83c0-0.11-0.04-0.2-0.11-0.27c-0.07-0.07-0.16-0.1-0.27-0.1H1.95c-0.11,0-0.2,0.03-0.27,0.1 c-0.07,0.07-0.1,0.16-0.1,0.27v12.33c0,0.11,0.03,0.2,0.1,0.27C1.75,16.5,1.84,16.54,1.95,16.54z M1.57,16.54V3.46V16.54z"/></svg>
+                                                        <span>video course</span>
+                                                    </div>
+                                                    <div class="dot"></div>
+                                                    <span>15 lessons</span>
+                                                </div>
+                                                <div class="course_card_title"><h3>Python For Data Science</h3></div>
+                                                <div class="course_card_author"><span>by </span><a href="#">Coursette</a></div>
+                                                <div class="course_card_rating d-flex flex-row align-items-center">
+                                                    <span>4.2</span>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_empty_1.png' %}" alt=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course_card_bottom trans_200 d-flex flex-row align-items-center">
+                                            <div class="course_card_price">$160,00</div>
+                                            <div class="course_card_link ms-auto d-flex flex-row align-items-center">
+                                                <a href="/course/">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path class="trans_200" d="M301.08-597.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08ZM192.31-595.38q-10.73 0-19.52-8.9t-8.79-20.3q0-11.06 8.79-19.24 8.79-8.18 20.02-8.18t19.52 8.03q8.29 8.03 8.29 19.89 0 10.9-8.14 19.8t-20.17 8.9Zm0 143.3q-10.73 0-19.52-8.68-8.79-8.67-8.79-19.74 0-11.81 8.79-20t20.02-8.19q11.23 0 19.52 8.04t8.29 20.65q0 10.57-8.14 19.24-8.14 8.68-20.17 8.68Zm0 144.08q-10.73 0-19.52-8.9T164-337.19q0-11.07 8.79-19.25t20.02-8.18q11.23 0 19.52 8.03t8.29 19.9q0 10.89-8.14 19.79-8.14 8.9-20.17 8.9Z"/></svg>
+                                                        <span class="trans_200">Details</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Course Card -->
+                            <div class="item course_card_owl_item">
+                                <div class="course_card">
+                                    <div class="course_card_container">
+                                        <div class="course_card_top">
+                                            <div class="course_card_category trans_200"><a href="/courses/"><span>Design</span></a></div>
+                                            <div class="course_card_pic">
+                                                <img src="{% static 'images/course_06.jpg' %}" alt="">
+                                            </div>
+                                            <div class="course_card_content">
+                                                <div class="course_card_meta d-flex flex-row align-items-center">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M1.95,18.11c-0.53,0-0.99-0.19-1.37-0.58C0.19,17.15,0,16.7,0,16.17V3.83c0-0.55,0.19-1.01,0.58-1.38 c0.38-0.38,0.84-0.56,1.37-0.56h12.33c0.54,0,1.01,0.19,1.38,0.56c0.38,0.38,0.56,0.84,0.56,1.38v5.18L20,5.24v9.53l-3.78-3.78v5.18 c0,0.53-0.19,0.99-0.56,1.37c-0.38,0.38-0.84,0.58-1.38,0.58H1.95z M1.95,16.54h12.33c0.11,0,0.2-0.03,0.27-0.1 c0.07-0.07,0.11-0.16,0.11-0.27V3.83c0-0.11-0.04-0.2-0.11-0.27c-0.07-0.07-0.16-0.1-0.27-0.1H1.95c-0.11,0-0.2,0.03-0.27,0.1 c-0.07,0.07-0.1,0.16-0.1,0.27v12.33c0,0.11,0.03,0.2,0.1,0.27C1.75,16.5,1.84,16.54,1.95,16.54z M1.57,16.54V3.46V16.54z"/></svg>
+                                                        <span>video course</span>
+                                                    </div>
+                                                    <div class="dot"></div>
+                                                    <span>15 lessons</span>
+                                                </div>
+                                                <div class="course_card_title"><h3>Machine Learning Course</h3></div>
+                                                <div class="course_card_author"><span>by </span><a href="#">Coursette</a></div>
+                                                <div class="course_card_rating d-flex flex-row align-items-center">
+                                                    <span>4.2</span>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_full_1.png' %}" alt=""></div>
+                                                    <div><img src="{% static 'images/star_empty_1.png' %}" alt=""></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="course_card_bottom trans_200 d-flex flex-row align-items-center">
+                                            <div class="course_card_price">$64,00</div>
+                                            <div class="course_card_link ms-auto d-flex flex-row align-items-center">
+                                                <a href="/course/">
+                                                    <div class="d-flex flex-row align-items-center">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path class="trans_200" d="M301.08-597.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08Zm0 143.69v-52H796v52H301.08ZM192.31-595.38q-10.73 0-19.52-8.9t-8.79-20.3q0-11.06 8.79-19.24 8.79-8.18 20.02-8.18t19.52 8.03q8.29 8.03 8.29 19.89 0 10.9-8.14 19.8t-20.17 8.9Zm0 143.3q-10.73 0-19.52-8.68-8.79-8.67-8.79-19.74 0-11.81 8.79-20t20.02-8.19q11.23 0 19.52 8.04t8.29 20.65q0 10.57-8.14 19.24-8.14 8.68-20.17 8.68Zm0 144.08q-10.73 0-19.52-8.9T164-337.19q0-11.07 8.79-19.25t20.02-8.18q11.23 0 19.52 8.03t8.29 19.9q0 10.89-8.14 19.79-8.14 8.9-20.17 8.9Z"/></svg>
+                                                        <span class="trans_200">Details</span>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- Courses Slider Nav Button (Prev) -->
+                        <div class="slider_nav_btn slider_nav_btn_prev disabled courses_slider_prev d-flex flex-row align-items-center justify-content-center trans_200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="trans_200"><path d="M576-253.85 349.85-480 576-706.15 613.15-669l-189 189 189 189L576-253.85Z"/></svg>
+                        </div>
+                        <!-- Courses Slider Nav Button (Next) -->
+                        <div class="slider_nav_btn slider_nav_btn_next courses_slider_next d-flex flex-row align-items-center justify-content-center trans_200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="trans_200"><path d="m535.85-480-189-189L384-706.15 610.15-480 384-253.85 346.85-291l189-189Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <!-- All Courses Link -->
+                    <div class="section_button_container d-flex flex-row">
+                        <div class="button_fill button_arrow courses_button ms-auto trans_200">
+                            <a href="/courses/">
+                                <div class="d-flex flex-row align-items-center">
+                                    <span>See all courses</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M648.08-454H212v-52h436.08L443.23-710.85 480-748l268 268-268 268-36.77-37.15L648.08-454Z"/></svg>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Why Us -->
+
+    <div class="why_us">
+        <div class="why_us_outer grad_light">
+            <div class="why_us_inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="section_title_container section_title_container_centered">
+                            <div class="section_subtitle section_subtitle_white">
+                                <div class="d-flex flex-row align-items-center">
+                                    <img src="{% static 'images/subtitle_icon_2.png' %}" alt="">
+                                    <span>Why pick us?</span>
+                                </div>
+                            </div>
+                            <div class="section_title"><h2>Why 1000+ clients <span>trust</span> Coursette</h2></div>
+                        </div>
+                    </div>
+                    <div class="row feature_boxes_container section_content_row">
+                        <!-- Feature Box (Why us?) -->
+                        <div class="col-12 col-xl-4 col-lg-6">
+                            <div class="feature_box d-flex flex-row">
+                                <div class="feature_box_icon"><img src="{% static 'images/icon_01.png' %}" alt=""></div>
+                                <div class="feature_box_content">
+                                    <div class="feature_box_title"><h3>Quality Content</h3></div>
+                                    <p>Access high-quality courses taught by industry experts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Feature Box (Why us?) -->
+                        <div class="col-12 col-xl-4 col-lg-6">
+                            <div class="feature_box d-flex flex-row">
+                                <div class="feature_box_icon"><img src="{% static 'images/icon_02.png' %}" alt=""></div>
+                                <div class="feature_box_content">
+                                    <div class="feature_box_title"><h3>Flexible Learning</h3></div>
+                                    <p>Access high-quality courses taught by industry experts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Feature Box (Why us?) -->
+                        <div class="col-12 col-xl-4 col-lg-6">
+                            <div class="feature_box d-flex flex-row">
+                                <div class="feature_box_icon"><img src="{% static 'images/icon_03.png' %}" alt=""></div>
+                                <div class="feature_box_content">
+                                    <div class="feature_box_title"><h3>Interactive Learning</h3></div>
+                                    <p>Access high-quality courses taught by industry experts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Feature Box (Why us?) -->
+                        <div class="col-12 col-xl-4 col-lg-6">
+                            <div class="feature_box d-flex flex-row">
+                                <div class="feature_box_icon"><img src="{% static 'images/icon_04.png' %}" alt=""></div>
+                                <div class="feature_box_content">
+                                    <div class="feature_box_title"><h3>Affordable Pricing</h3></div>
+                                    <p>Access high-quality courses taught by industry experts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Feature Box (Why us?) -->
+                        <div class="col-12 col-xl-4 col-lg-6">
+                            <div class="feature_box d-flex flex-row">
+                                <div class="feature_box_icon"><img src="{% static 'images/icon_05.png' %}" alt=""></div>
+                                <div class="feature_box_content">
+                                    <div class="feature_box_title"><h3>Certification</h3></div>
+                                    <p>Access high-quality courses taught by industry experts.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Feature Box (Why us?) -->
+                        <div class="col-12 col-xl-4 col-lg-6">
+                            <div class="feature_box d-flex flex-row">
+                                <div class="feature_box_icon"><img src="{% static 'images/icon_06.png' %}" alt=""></div>
+                                <div class="feature_box_content">
+                                    <div class="feature_box_title"><h3>Community Support</h3></div>
+                                    <p>Access high-quality courses taught by industry experts.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories -->
+
+    <div class="categories">
+        <div class="container">
+            <div class="row">
+                <div class="section_title_container section_title_container_centered">
+                    <div class="section_subtitle">
+                        <div class="d-flex flex-row align-items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M303.69-543.39 480-834.77l176.31 291.38H303.69Zm392.31 432q-63.85 0-108.23-44.38T543.39-264q0-63.85 44.38-108.23T696-416.61q63.85 0 108.23 44.38T848.61-264q0 63.85-44.38 108.23T696-111.39Zm-536.61-24v-257.22h257.22v257.22H159.39Zm536.37-27.99q42.16 0 71.51-29.11 29.35-29.11 29.35-71.27t-29.11-71.51q-29.11-29.35-71.27-29.35t-71.51 29.11q-29.35 29.11-29.35 71.27t29.11 71.51q29.11 29.35 71.27 29.35Zm-484.38-24h153.24v-153.24H211.38v153.24Zm184.16-408h168.92L480-733.46l-84.46 138.08Zm84.46 0ZM364.62-340.62ZM691-269Z"/></svg>
+                            <span>Diversity</span>
+                        </div>
+                    </div>
+                    <div class="section_title"><h2>Top Categories</h2></div>
+                </div>
+            </div>
+            <div class="row categories_row section_content_row">
+                <div class="col">
+                    <div class="category_slider_container">
+                        <div class="owl-carousel owl-theme" id="categories_slider">
+                            <!-- Category Item -->
+                            <div class="categories_slider_item">
+                                <div class="category_card">
+                                    <div class="category_card_pic">
+                                        <img src="{% static 'images/category_01.jpg' %}" alt="">
+                                    </div>
+                                    <div class="category_card_content trans_200">
+                                        <a href="/courses/">
+                                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                                <span>Painting</span>
+                                                <span>(18)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Category Item -->
+                            <div class="categories_slider_item">
+                                <div class="category_card">
+                                    <div class="category_card_pic">
+                                        <img src="{% static 'images/category_02.jpg' %}" alt="">
+                                    </div>
+                                    <div class="category_card_content trans_200">
+                                        <a href="/courses/">
+                                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                                <span>Math</span>
+                                                <span>(2)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Category Item -->
+                            <div class="categories_slider_item">
+                                <div class="category_card">
+                                    <div class="category_card_pic">
+                                        <img src="{% static 'images/category_03.jpg' %}" alt="">
+                                    </div>
+                                    <div class="category_card_content trans_200">
+                                        <a href="/courses/">
+                                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                                <span>Health</span>
+                                                <span>(8)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Category Item -->
+                            <div class="categories_slider_item">
+                                <div class="category_card">
+                                    <div class="category_card_pic">
+                                        <img src="{% static 'images/category_04.jpg' %}" alt="">
+                                    </div>
+                                    <div class="category_card_content trans_200">
+                                        <a href="/courses/">
+                                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                                <span>Engineering</span>
+                                                <span>(23)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Category Item -->
+                            <div class="categories_slider_item">
+                                <div class="category_card">
+                                    <div class="category_card_pic">
+                                        <img src="{% static 'images/category_01.jpg' %}" alt="">
+                                    </div>
+                                    <div class="category_card_content trans_200">
+                                        <a href="/courses/">
+                                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                                <span>Painting</span>
+                                                <span>(18)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Category Item -->
+                            <div class="categories_slider_item">
+                                <div class="category_card">
+                                    <div class="category_card_pic">
+                                        <img src="{% static 'images/category_02.jpg' %}" alt="">
+                                    </div>
+                                    <div class="category_card_content trans_200">
+                                        <a href="/courses/">
+                                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                                <span>Math</span>
+                                                <span>(2)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Category Item -->
+                            <div class="categories_slider_item">
+                                <div class="category_card">
+                                    <div class="category_card_pic">
+                                        <img src="{% static 'images/category_03.jpg' %}" alt="">
+                                    </div>
+                                    <div class="category_card_content trans_200">
+                                        <a href="/courses/">
+                                            <div class="d-flex flex-column align-items-center justify-content-center">
+                                                <span>Health</span>
+                                                <span>(8)</span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Category Slider Nav Button (Prev) -->
+                        <div class="slider_nav_btn slider_nav_btn_prev disabled categories_slider_prev d-flex flex-row align-items-center justify-content-center trans_200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="trans_200"><path d="M576-253.85 349.85-480 576-706.15 613.15-669l-189 189 189 189L576-253.85Z"/></svg>
+                        </div>
+                        <!-- Category Slider Nav Button (Next) -->
+                        <div class="slider_nav_btn slider_nav_btn_next categories_slider_next d-flex flex-row align-items-center justify-content-center trans_200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="trans_200"><path d="m535.85-480-189-189L384-706.15 610.15-480 384-253.85 346.85-291l189-189Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Brands -->
+
+    <div class="brands">
+        <div class="brands_inner">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="brands_flex d-flex flex-row align-items-center">
+                            <div class="brands_description d-flex flex-row align-items-center">
+                                <p>Our students now work at</p>
+                            </div>
+                            <div class="marquee_mode">
+                                <div class="marquee_content d-flex flex-row align-items-center justify-content-between">
+                                    <div class="brand_item"><img src="{% static 'images/brand_1.png' %}" alt=""></div>
+                                    <div class="brand_item"><img src="{% static 'images/brand_2.png' %}" alt=""></div>
+                                    <div class="brand_item"><img src="{% static 'images/brand_3.png' %}" alt=""></div>
+                                    <div class="brand_item"><img src="{% static 'images/brand_4.png' %}" alt=""></div>
+                                    <div class="brand_item"><img src="{% static 'images/brand_5.png' %}" alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials -->
+
+    <div class="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title_container section_title_container_centered">
+                        <div class="section_subtitle">
+                            <div class="d-flex flex-row align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-492.31q-51.75 0-87.87-36.12Q356-564.56 356-616.31q0-51.75 36.13-87.87 36.12-36.13 87.87-36.13 51.75 0 87.87 36.13Q604-668.06 604-616.31q0 51.75-36.13 87.88-36.12 36.12-87.87 36.12ZM212-219.69v-72.93q0-18.38 10.96-35.42 10.96-17.04 30.66-29.5 52.3-30.07 109.94-46.11t116.23-16.04q58.59 0 116.44 16.04 57.85 16.04 110.15 46.11 19.7 11.46 30.66 29T748-292.62v72.93H212Zm52-52h432v-20.93q0-6.33-4.56-11.91-4.57-5.58-12.59-9.47-43.7-26.46-94.42-40.08Q533.7-367.69 480-367.69q-53.7 0-104.43 13.61-50.72 13.62-94.42 40.08-8.07 5.54-12.61 10.61-4.54 5.07-4.54 10.77v20.93Zm216.21-272.62q29.79 0 50.79-21.21t21-51q0-29.79-21.21-50.79t-51-21q-29.79 0-50.79 21.22-21 21.21-21 51 0 29.78 21.21 50.78t51 21Zm-.21-72Zm0 344.62Z"/></svg>
+                                <span>Testimonials</span>
+                            </div>
+                        </div>
+                        <div class="section_title"><h2>What our clients say</h2></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row testimonials_row section_content_row">
+                <!-- Testimonial Item -->
+                <div class="col-12 col-lg-6 col-xl-4">
+                    <div class="testimonial_item">
+                        <div class="testimonial_top">
+                            <div class="quote"><img src="{% static 'images/quote_icon.png' %}" alt=""></div>
+                            <div class="testimonial_rating d-flex flex-row align-items-center">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <span>4.8</span>
+                            </div>
+                            <p>“The courses on this website have been incredibly helpful. I've learned so much and have been able to apply my new knowledge in my job.”</p>
+                        </div>
+                        <div class="testimonial_bottom d-flex flex-row align-items-center">
+                            <div class="testimonial_item_user_pic"><img src="{% static 'images/testimonial_user_1.jpg' %}" alt=""></div>
+                            <div class="testimonial_user_content">
+                                <div>Donna Smith</div>
+                                <div>Marketing manager</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Item -->
+                <div class="col-12 col-lg-6 col-xl-4">
+                    <div class="testimonial_item">
+                        <div class="testimonial_top">
+                            <div class="quote"><img src="{% static 'images/quote_icon.png' %}" alt=""></div>
+                            <div class="testimonial_rating d-flex flex-row align-items-center">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <span>4.8</span>
+                            </div>
+                            <p>“The courses on this website have been incredibly helpful. I've learned so much and have been able to apply my new knowledge in my job.”</p>
+                        </div>
+                        <div class="testimonial_bottom d-flex flex-row align-items-center">
+                            <div class="testimonial_item_user_pic"><img src="{% static 'images/testimonial_user_1.jpg' %}" alt=""></div>
+                            <div class="testimonial_user_content">
+                                <div>Donna Smith</div>
+                                <div>Marketing manager</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial Item -->
+                <div class="col-12 col-lg-6 col-xl-4">
+                    <div class="testimonial_item">
+                        <div class="testimonial_top">
+                            <div class="quote"><img src="{% static 'images/quote_icon.png' %}" alt=""></div>
+                            <div class="testimonial_rating d-flex flex-row align-items-center">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <img src="{% static 'images/star_dark_full.png' %}" alt="">
+                                <span>4.8</span>
+                            </div>
+                            <p>“The courses on this website have been incredibly helpful. I've learned so much and have been able to apply my new knowledge in my job.”</p>
+                        </div>
+                        <div class="testimonial_bottom d-flex flex-row align-items-center">
+                            <div class="testimonial_item_user_pic"><img src="{% static 'images/testimonial_user_1.jpg' %}" alt=""></div>
+                            <div class="testimonial_user_content">
+                                <div>Donna Smith</div>
+                                <div>Marketing manager</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA 1 -->
+
+    <div class="cta1">
+        <div class="cta1_inner grad_light d-flex flex-column align-items-center justify-content-center">
+
+<div class="background_image" style="background-image: url({% static 'images/cta_background_1.jpg' %});"></div>
+            <div class="cta1_content">
+                <h2>Get started now!</h2>
+                <p>Start your learning journey today and unlock your full potential with us.</p>
+                <div class="cta1_buttons d-flex flex-row align-items-center justify-content-center">
+                    <!-- Button Fill -->
+                    <div class="button_fill trans_200">
+                        <a href="#">
+                            <div class="d-flex flex-row align-items-center">
+                                <span>Get started</span>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Button Outlline -->
+                    <div class="button_outline trans_200">
+                        <a href="/courses/">
+                            <div class="d-flex flex-row align-items-center">
+                                <span>View courses</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Events -->
+
+    <div class="events">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title_container section_title_container_centered">
+                        <div class="section_subtitle">
+                            <div class="d-flex flex-row align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M583.92-240q-36.77 0-62.65-25.66-25.88-25.66-25.88-62.42 0-36.77 25.65-62.65 25.66-25.88 62.43-25.88 36.76 0 62.65 25.65Q672-365.3 672-328.53q0 36.76-25.66 62.65Q620.68-240 583.92-240ZM228.31-116q-27.01 0-45.66-19Q164-154 164-180.31v-503.38Q164-710 182.65-729q18.65-19 45.66-19h87.38v-100.61h53.54V-748h223.08v-100.61h52V-748h87.38q27.01 0 45.66 19Q796-710 796-683.69v503.38Q796-154 777.35-135q-18.65 19-45.66 19H228.31Zm0-52h503.38q4.62 0 8.46-3.85 3.85-3.84 3.85-8.46v-335.38H216v335.38q0 4.62 3.85 8.46 3.84 3.85 8.46 3.85ZM216-567.69h528v-116q0-4.62-3.85-8.46-3.84-3.85-8.46-3.85H228.31q-4.62 0-8.46 3.85-3.85 3.84-3.85 8.46v116Zm0 0V-696v128.31Z"/></svg>
+                                <span>Comming soon</span>
+                            </div>
+                        </div>
+                        <div class="section_title"><h2>Upcoming Events</h2></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row events_row section_content_row">
+                <div class="col">
+                    <!-- Events Item -->
+                    <div class="event d-flex flex-row justify-content-between">
+                        <div class="event_left d-flex flex-row">
+                            <div class="event_date d-flex flex-column align-items-center justify-content-center">
+                                <span>22</span>
+                                <span>May</span>
+                            </div>
+                            <div class="event_pic">
+                                <div class="background_image" style="background-image:url({% static 'images/event_1.jpg' %})"></div>
+                            </div>
+                        </div>
+                        <div class="event_right">
+                            <div class="event_title"><h3>Tech Industry Meetup</h3></div>
+                            <div class="event_location">City Lounge & Bar</div>
+                            <p>Network with fellow professionals and expand your connections at our Tech Industry Meetup. Enjoy an evening of informal networking, sharing insights, and building relationships with individuals from diverse backgrounds across the tech industry.</p>
+                            <a href="#">Read more</a>
+                        </div>
+                    </div>
+                    <!-- Events Item -->
+                    <div class="event d-flex flex-row justify-content-between">
+                        <div class="event_left d-flex flex-row">
+                            <div class="event_date d-flex flex-column align-items-center justify-content-center">
+                                <span>22</span>
+                                <span>May</span>
+                            </div>
+                            <div class="event_pic">
+                                <div class="background_image" style="background-image:url({% static 'images/event_2.jpg' %})";></div>
+                            </div>
+                        </div>
+                        <div class="event_right">
+                            <div class="event_title"><h3>Tech Career Expo</h3></div>
+                            <div class="event_location">University Auditorium</div>
+                            <p>Network with fellow professionals and expand your connections at our Tech Industry Meetup. Enjoy an evening of informal networking, sharing insights, and building relationships with individuals from diverse backgrounds across the tech industry.</p>
+                            <a href="#">Read more</a>
+                        </div>
+                    </div>
+                    <!-- Events Item -->
+                    <div class="event d-flex flex-row justify-content-between">
+                        <div class="event_left d-flex flex-row">
+                            <div class="event_date d-flex flex-column align-items-center justify-content-center">
+                                <span>22</span>
+                                <span>May</span>
+                            </div>
+                            <div class="event_pic">
+                                <div class="background_image" style="background-image:url({% static 'images/event_3.jpg' %})"></div>
+                            </div>
+                        </div>
+                        <div class="event_right">
+                            <div class="event_title"><h3>Innovate For Social Impact</h3></div>
+                            <div class="event_location">Community Center</div>
+                            <p>Network with fellow professionals and expand your connections at our Tech Industry Meetup. Enjoy an evening of informal networking, sharing insights, and building relationships with individuals from diverse backgrounds across the tech industry.</p>
+                            <a href="#">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CTA2 -->
+
+    <div class="cta2">
+        <div class="cta2_inner">
+            <div class="container">
+                <div class="row">
+                    <!-- CTA2 Item -->
+                    <div class="col-12 col-xl-4 col-lg-6">
+                        <div class="cta2_item d-flex flex-row align-items-center justify-content-center">
+                            <div class="cta2_color trans_200"></div>
+                            <a href="#"></a>
+                            <img src="{% static 'images/extra_1.jpg' %}" alt="">
+                            <div class="cta2_item_content trans_200">Our Teachers</div>
+                        </div>
+                    </div>
+                    <!-- CTA2 Item -->
+                    <div class="col-12 col-xl-4 col-lg-6">
+                        <div class="cta2_item d-flex flex-row align-items-center justify-content-center">
+                            <div class="cta2_color trans_200"></div>
+                            <a href="#"></a>
+                            <img src="{% static 'images/extra_2.jpg' %}" alt="">
+                            <div class="cta2_item_content trans_200">Be a teacher</div>
+                        </div>
+                    </div>
+                    <!-- CTA2 Item -->
+                    <div class="col-12 col-xl-4 col-lg-6">
+                        <div class="cta2_item d-flex flex-row align-items-center justify-content-center">
+                            <div class="cta2_color trans_200"></div>
+                            <a href="#"></a>
+                            <img src="{% static 'images/extra_3.jpg' %}" alt="">
+                            <div class="cta2_item_content trans_200">Be a student</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog -->
+
+    <div class="blog">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="section_title_container section_title_container_centered">
+                        <div class="section_subtitle">
+                            <div class="d-flex flex-row align-items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M228.31-164q-27.01 0-45.66-18.65Q164-201.3 164-228.31v-503.38q0-27.01 18.65-45.66Q201.3-796 228.31-796h387.23L796-615.54v387.23q0 27.01-18.65 45.66Q758.7-164 731.69-164H228.31Zm0-52h503.38q5.39 0 8.85-3.46t3.46-8.85V-576H576v-168H228.31q-5.39 0-8.85 3.46t-3.46 8.85v503.38q0 5.39 3.46 8.85t8.85 3.46ZM298-308h364v-52H298v52Zm12-280h170v-52H310v52Zm-12 158h364v-52H298v52Zm-82-314v156-156V-216v-528Z"/></svg>
+                                <span>News</span>
+                            </div>
+                        </div>
+                        <div class="section_title"><h2>Latest on our blog</h2></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row section_content_row">
+                <div class="col">
+                    <div class="blog_slider_container">
+                        <div class="owl-carousel owl-theme blog_slider">
+                            <!-- Blog Item -->
+                            <div class="blog_slider_item">
+                                <div class="blog_item">
+                                    <div class="blog_pic">
+                                        <img src="{% static 'images/blog_1.jpg' %}" alt="">
+                                    </div>
+                                    <div class="blog_content">
+                                        <h4><a href="/blog_single/">New Course Launch: Mastering Data Science</a></h4>
+                                        <div class="blog_meta d-flex flex-row align-items-center justify-content-between">
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 17 20" style="enable-background:new 0 0 17 20;" xml:space="preserve"><path class="st0" d="M5.83,2.19V0.96h5.33v1.23H5.83z M7.88,12.5h1.23V7.17H7.88V12.5z M8.5,19.04c-1.05,0-2.02-0.2-2.93-0.59 c-0.91-0.39-1.7-0.93-2.38-1.61c-0.68-0.68-1.21-1.47-1.61-2.38C1.2,13.57,1,12.59,1,11.54s0.2-2.02,0.59-2.93 c0.39-0.91,0.93-1.7,1.61-2.38c0.68-0.68,1.47-1.21,2.38-1.61c0.91-0.39,1.88-0.59,2.92-0.59c0.89,0,1.75,0.16,2.58,0.47 c0.83,0.31,1.59,0.75,2.28,1.3l1.09-1.06l0.86,0.86L14.23,6.7c0.55,0.68,0.99,1.43,1.3,2.26C15.84,9.79,16,10.65,16,11.55 c0,1.04-0.2,2.02-0.59,2.93c-0.39,0.91-0.93,1.7-1.61,2.38c-0.68,0.68-1.47,1.21-2.38,1.61C10.52,18.85,9.55,19.04,8.5,19.04z M8.5,17.81c1.74,0,3.22-0.61,4.44-1.83s1.83-2.7,1.83-4.44s-0.61-3.22-1.83-4.44s-2.7-1.83-4.44-1.83S5.28,5.89,4.06,7.1 s-1.83,2.7-1.83,4.44s0.61,3.22,1.83,4.44S6.76,17.81,8.5,17.81z"/></svg>
+                                                <span>6 mins read</span>
+                                            </div>
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M4.28,18.28c-0.41,0-0.76-0.14-1.04-0.43s-0.42-0.63-0.42-1.03V5.37c0-0.4,0.14-0.74,0.42-1.03 s0.63-0.43,1.04-0.43h1.99V1.62h1.22v2.29h5.07V1.62h1.18v2.29h1.99c0.41,0,0.76,0.14,1.04,0.43c0.28,0.29,0.42,0.63,0.42,1.03 v11.45c0,0.4-0.14,0.74-0.42,1.03c-0.28,0.29-0.63,0.43-1.04,0.43H4.28z M4.28,17.1h11.45c0.07,0,0.13-0.03,0.19-0.09 c0.06-0.06,0.09-0.12,0.09-0.19V9.19H4v7.63c0,0.07,0.03,0.13,0.09,0.19C4.14,17.07,4.21,17.1,4.28,17.1z M4,8.01H16V5.37 c0-0.07-0.03-0.13-0.09-0.19c-0.06-0.06-0.12-0.09-0.19-0.09H4.28c-0.07,0-0.13,0.03-0.19,0.09C4.03,5.24,4,5.3,4,5.37 C4,5.37,4,8.01,4,8.01z M4,8.01V5.09V8.01z"/></svg>
+                                                <span>12.05.24</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Blog Item -->
+                            <div class="blog_slider_item">
+                                <div class="blog_item">
+                                    <div class="blog_pic">
+                                        <img src="{% static 'images/blog_2.jpg' %}" alt="">
+                                    </div>
+                                    <div class="blog_content">
+                                        <h4><a href="/blog_single/">Success Story of Software Developer Julia Martinez</a></h4>
+                                        <div class="blog_meta d-flex flex-row align-items-center justify-content-between">
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 17 20" style="enable-background:new 0 0 17 20;" xml:space="preserve"><path class="st0" d="M5.83,2.19V0.96h5.33v1.23H5.83z M7.88,12.5h1.23V7.17H7.88V12.5z M8.5,19.04c-1.05,0-2.02-0.2-2.93-0.59 c-0.91-0.39-1.7-0.93-2.38-1.61c-0.68-0.68-1.21-1.47-1.61-2.38C1.2,13.57,1,12.59,1,11.54s0.2-2.02,0.59-2.93 c0.39-0.91,0.93-1.7,1.61-2.38c0.68-0.68,1.47-1.21,2.38-1.61c0.91-0.39,1.88-0.59,2.92-0.59c0.89,0,1.75,0.16,2.58,0.47 c0.83,0.31,1.59,0.75,2.28,1.3l1.09-1.06l0.86,0.86L14.23,6.7c0.55,0.68,0.99,1.43,1.3,2.26C15.84,9.79,16,10.65,16,11.55 c0,1.04-0.2,2.02-0.59,2.93c-0.39,0.91-0.93,1.7-1.61,2.38c-0.68,0.68-1.47,1.21-2.38,1.61C10.52,18.85,9.55,19.04,8.5,19.04z M8.5,17.81c1.74,0,3.22-0.61,4.44-1.83s1.83-2.7,1.83-4.44s-0.61-3.22-1.83-4.44s-2.7-1.83-4.44-1.83S5.28,5.89,4.06,7.1 s-1.83,2.7-1.83,4.44s0.61,3.22,1.83,4.44S6.76,17.81,8.5,17.81z"/></svg>
+                                                <span>6 mins read</span>
+                                            </div>
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M4.28,18.28c-0.41,0-0.76-0.14-1.04-0.43s-0.42-0.63-0.42-1.03V5.37c0-0.4,0.14-0.74,0.42-1.03 s0.63-0.43,1.04-0.43h1.99V1.62h1.22v2.29h5.07V1.62h1.18v2.29h1.99c0.41,0,0.76,0.14,1.04,0.43c0.28,0.29,0.42,0.63,0.42,1.03 v11.45c0,0.4-0.14,0.74-0.42,1.03c-0.28,0.29-0.63,0.43-1.04,0.43H4.28z M4.28,17.1h11.45c0.07,0,0.13-0.03,0.19-0.09 c0.06-0.06,0.09-0.12,0.09-0.19V9.19H4v7.63c0,0.07,0.03,0.13,0.09,0.19C4.14,17.07,4.21,17.1,4.28,17.1z M4,8.01H16V5.37 c0-0.07-0.03-0.13-0.09-0.19c-0.06-0.06-0.12-0.09-0.19-0.09H4.28c-0.07,0-0.13,0.03-0.19,0.09C4.03,5.24,4,5.3,4,5.37 C4,5.37,4,8.01,4,8.01z M4,8.01V5.09V8.01z"/></svg>
+                                                <span>12.05.24</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Blog Item -->
+                            <div class="blog_slider_item">
+                                <div class="blog_item">
+                                    <div class="blog_pic">
+                                        <img src="{% static 'images/blog_3.jpg' %}" alt="">
+                                    </div>
+                                    <div class="blog_content">
+                                        <h4><a href="/blog_single/">Upcoming Event: Tech Trends 2024 Conference</a></h4>
+                                        <div class="blog_meta d-flex flex-row align-items-center justify-content-between">
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 17 20" style="enable-background:new 0 0 17 20;" xml:space="preserve"><path class="st0" d="M5.83,2.19V0.96h5.33v1.23H5.83z M7.88,12.5h1.23V7.17H7.88V12.5z M8.5,19.04c-1.05,0-2.02-0.2-2.93-0.59 c-0.91-0.39-1.7-0.93-2.38-1.61c-0.68-0.68-1.21-1.47-1.61-2.38C1.2,13.57,1,12.59,1,11.54s0.2-2.02,0.59-2.93 c0.39-0.91,0.93-1.7,1.61-2.38c0.68-0.68,1.47-1.21,2.38-1.61c0.91-0.39,1.88-0.59,2.92-0.59c0.89,0,1.75,0.16,2.58,0.47 c0.83,0.31,1.59,0.75,2.28,1.3l1.09-1.06l0.86,0.86L14.23,6.7c0.55,0.68,0.99,1.43,1.3,2.26C15.84,9.79,16,10.65,16,11.55 c0,1.04-0.2,2.02-0.59,2.93c-0.39,0.91-0.93,1.7-1.61,2.38c-0.68,0.68-1.47,1.21-2.38,1.61C10.52,18.85,9.55,19.04,8.5,19.04z M8.5,17.81c1.74,0,3.22-0.61,4.44-1.83s1.83-2.7,1.83-4.44s-0.61-3.22-1.83-4.44s-2.7-1.83-4.44-1.83S5.28,5.89,4.06,7.1 s-1.83,2.7-1.83,4.44s0.61,3.22,1.83,4.44S6.76,17.81,8.5,17.81z"/></svg>
+                                                <span>6 mins read</span>
+                                            </div>
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M4.28,18.28c-0.41,0-0.76-0.14-1.04-0.43s-0.42-0.63-0.42-1.03V5.37c0-0.4,0.14-0.74,0.42-1.03 s0.63-0.43,1.04-0.43h1.99V1.62h1.22v2.29h5.07V1.62h1.18v2.29h1.99c0.41,0,0.76,0.14,1.04,0.43c0.28,0.29,0.42,0.63,0.42,1.03 v11.45c0,0.4-0.14,0.74-0.42,1.03c-0.28,0.29-0.63,0.43-1.04,0.43H4.28z M4.28,17.1h11.45c0.07,0,0.13-0.03,0.19-0.09 c0.06-0.06,0.09-0.12,0.09-0.19V9.19H4v7.63c0,0.07,0.03,0.13,0.09,0.19C4.14,17.07,4.21,17.1,4.28,17.1z M4,8.01H16V5.37 c0-0.07-0.03-0.13-0.09-0.19c-0.06-0.06-0.12-0.09-0.19-0.09H4.28c-0.07,0-0.13,0.03-0.19,0.09C4.03,5.24,4,5.3,4,5.37 C4,5.37,4,8.01,4,8.01z M4,8.01V5.09V8.01z"/></svg>
+                                                <span>12.05.24</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Blog Item -->
+                            <div class="blog_slider_item">
+                                <div class="blog_item">
+                                    <div class="blog_pic">
+                                        <img src="{% static 'images/blog_1.jpg' %}" alt="">
+                                    </div>
+                                    <div class="blog_content">
+                                        <h4><a href="/blog_single/">New Course Launch: Mastering Data Science</a></h4>
+                                        <div class="blog_meta d-flex flex-row align-items-center justify-content-between">
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 17 20" style="enable-background:new 0 0 17 20;" xml:space="preserve"><path class="st0" d="M5.83,2.19V0.96h5.33v1.23H5.83z M7.88,12.5h1.23V7.17H7.88V12.5z M8.5,19.04c-1.05,0-2.02-0.2-2.93-0.59 c-0.91-0.39-1.7-0.93-2.38-1.61c-0.68-0.68-1.21-1.47-1.61-2.38C1.2,13.57,1,12.59,1,11.54s0.2-2.02,0.59-2.93 c0.39-0.91,0.93-1.7,1.61-2.38c0.68-0.68,1.47-1.21,2.38-1.61c0.91-0.39,1.88-0.59,2.92-0.59c0.89,0,1.75,0.16,2.58,0.47 c0.83,0.31,1.59,0.75,2.28,1.3l1.09-1.06l0.86,0.86L14.23,6.7c0.55,0.68,0.99,1.43,1.3,2.26C15.84,9.79,16,10.65,16,11.55 c0,1.04-0.2,2.02-0.59,2.93c-0.39,0.91-0.93,1.7-1.61,2.38c-0.68,0.68-1.47,1.21-2.38,1.61C10.52,18.85,9.55,19.04,8.5,19.04z M8.5,17.81c1.74,0,3.22-0.61,4.44-1.83s1.83-2.7,1.83-4.44s-0.61-3.22-1.83-4.44s-2.7-1.83-4.44-1.83S5.28,5.89,4.06,7.1 s-1.83,2.7-1.83,4.44s0.61,3.22,1.83,4.44S6.76,17.81,8.5,17.81z"/></svg>
+                                                <span>6 mins read</span>
+                                            </div>
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M4.28,18.28c-0.41,0-0.76-0.14-1.04-0.43s-0.42-0.63-0.42-1.03V5.37c0-0.4,0.14-0.74,0.42-1.03 s0.63-0.43,1.04-0.43h1.99V1.62h1.22v2.29h5.07V1.62h1.18v2.29h1.99c0.41,0,0.76,0.14,1.04,0.43c0.28,0.29,0.42,0.63,0.42,1.03 v11.45c0,0.4-0.14,0.74-0.42,1.03c-0.28,0.29-0.63,0.43-1.04,0.43H4.28z M4.28,17.1h11.45c0.07,0,0.13-0.03,0.19-0.09 c0.06-0.06,0.09-0.12,0.09-0.19V9.19H4v7.63c0,0.07,0.03,0.13,0.09,0.19C4.14,17.07,4.21,17.1,4.28,17.1z M4,8.01H16V5.37 c0-0.07-0.03-0.13-0.09-0.19c-0.06-0.06-0.12-0.09-0.19-0.09H4.28c-0.07,0-0.13,0.03-0.19,0.09C4.03,5.24,4,5.3,4,5.37 C4,5.37,4,8.01,4,8.01z M4,8.01V5.09V8.01z"/></svg>
+                                                <span>12.05.24</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Blog Item -->
+                            <div class="blog_slider_item">
+                                <div class="blog_item">
+                                    <div class="blog_pic">
+                                        <img src="{% static 'images/blog_2.jpg' %}" alt="">
+                                    </div>
+                                    <div class="blog_content">
+                                        <h4><a href="/blog_single/">Success Story of Software Developer Julia Martinez</a></h4>
+                                        <div class="blog_meta d-flex flex-row align-items-center justify-content-between">
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 17 20" style="enable-background:new 0 0 17 20;" xml:space="preserve"><path class="st0" d="M5.83,2.19V0.96h5.33v1.23H5.83z M7.88,12.5h1.23V7.17H7.88V12.5z M8.5,19.04c-1.05,0-2.02-0.2-2.93-0.59 c-0.91-0.39-1.7-0.93-2.38-1.61c-0.68-0.68-1.21-1.47-1.61-2.38C1.2,13.57,1,12.59,1,11.54s0.2-2.02,0.59-2.93 c0.39-0.91,0.93-1.7,1.61-2.38c0.68-0.68,1.47-1.21,2.38-1.61c0.91-0.39,1.88-0.59,2.92-0.59c0.89,0,1.75,0.16,2.58,0.47 c0.83,0.31,1.59,0.75,2.28,1.3l1.09-1.06l0.86,0.86L14.23,6.7c0.55,0.68,0.99,1.43,1.3,2.26C15.84,9.79,16,10.65,16,11.55 c0,1.04-0.2,2.02-0.59,2.93c-0.39,0.91-0.93,1.7-1.61,2.38c-0.68,0.68-1.47,1.21-2.38,1.61C10.52,18.85,9.55,19.04,8.5,19.04z M8.5,17.81c1.74,0,3.22-0.61,4.44-1.83s1.83-2.7,1.83-4.44s-0.61-3.22-1.83-4.44s-2.7-1.83-4.44-1.83S5.28,5.89,4.06,7.1 s-1.83,2.7-1.83,4.44s0.61,3.22,1.83,4.44S6.76,17.81,8.5,17.81z"/></svg>
+                                                <span>6 mins read</span>
+                                            </div>
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M4.28,18.28c-0.41,0-0.76-0.14-1.04-0.43s-0.42-0.63-0.42-1.03V5.37c0-0.4,0.14-0.74,0.42-1.03 s0.63-0.43,1.04-0.43h1.99V1.62h1.22v2.29h5.07V1.62h1.18v2.29h1.99c0.41,0,0.76,0.14,1.04,0.43c0.28,0.29,0.42,0.63,0.42,1.03 v11.45c0,0.4-0.14,0.74-0.42,1.03c-0.28,0.29-0.63,0.43-1.04,0.43H4.28z M4.28,17.1h11.45c0.07,0,0.13-0.03,0.19-0.09 c0.06-0.06,0.09-0.12,0.09-0.19V9.19H4v7.63c0,0.07,0.03,0.13,0.09,0.19C4.14,17.07,4.21,17.1,4.28,17.1z M4,8.01H16V5.37 c0-0.07-0.03-0.13-0.09-0.19c-0.06-0.06-0.12-0.09-0.19-0.09H4.28c-0.07,0-0.13,0.03-0.19,0.09C4.03,5.24,4,5.3,4,5.37 C4,5.37,4,8.01,4,8.01z M4,8.01V5.09V8.01z"/></svg>
+                                                <span>12.05.24</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Blog Item -->
+                            <div class="blog_slider_item">
+                                <div class="blog_item">
+                                    <div class="blog_pic">
+                                        <img src="{% static 'images/blog_3.jpg' %}" alt="">
+                                    </div>
+                                    <div class="blog_content">
+                                        <h4><a href="/blog_single/">Upcoming Event: Tech Trends 2024 Conference</a></h4>
+                                        <div class="blog_meta d-flex flex-row align-items-center justify-content-between">
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 17 20" style="enable-background:new 0 0 17 20;" xml:space="preserve"><path class="st0" d="M5.83,2.19V0.96h5.33v1.23H5.83z M7.88,12.5h1.23V7.17H7.88V12.5z M8.5,19.04c-1.05,0-2.02-0.2-2.93-0.59 c-0.91-0.39-1.7-0.93-2.38-1.61c-0.68-0.68-1.21-1.47-1.61-2.38C1.2,13.57,1,12.59,1,11.54s0.2-2.02,0.59-2.93 c0.39-0.91,0.93-1.7,1.61-2.38c0.68-0.68,1.47-1.21,2.38-1.61c0.91-0.39,1.88-0.59,2.92-0.59c0.89,0,1.75,0.16,2.58,0.47 c0.83,0.31,1.59,0.75,2.28,1.3l1.09-1.06l0.86,0.86L14.23,6.7c0.55,0.68,0.99,1.43,1.3,2.26C15.84,9.79,16,10.65,16,11.55 c0,1.04-0.2,2.02-0.59,2.93c-0.39,0.91-0.93,1.7-1.61,2.38c-0.68,0.68-1.47,1.21-2.38,1.61C10.52,18.85,9.55,19.04,8.5,19.04z M8.5,17.81c1.74,0,3.22-0.61,4.44-1.83s1.83-2.7,1.83-4.44s-0.61-3.22-1.83-4.44s-2.7-1.83-4.44-1.83S5.28,5.89,4.06,7.1 s-1.83,2.7-1.83,4.44s0.61,3.22,1.83,4.44S6.76,17.81,8.5,17.81z"/></svg>
+                                                <span>6 mins read</span>
+                                            </div>
+                                            <div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 20 20"><path class="st0" d="M4.28,18.28c-0.41,0-0.76-0.14-1.04-0.43s-0.42-0.63-0.42-1.03V5.37c0-0.4,0.14-0.74,0.42-1.03 s0.63-0.43,1.04-0.43h1.99V1.62h1.22v2.29h5.07V1.62h1.18v2.29h1.99c0.41,0,0.76,0.14,1.04,0.43c0.28,0.29,0.42,0.63,0.42,1.03 v11.45c0,0.4-0.14,0.74-0.42,1.03c-0.28,0.29-0.63,0.43-1.04,0.43H4.28z M4.28,17.1h11.45c0.07,0,0.13-0.03,0.19-0.09 c0.06-0.06,0.09-0.12,0.09-0.19V9.19H4v7.63c0,0.07,0.03,0.13,0.09,0.19C4.14,17.07,4.21,17.1,4.28,17.1z M4,8.01H16V5.37 c0-0.07-0.03-0.13-0.09-0.19c-0.06-0.06-0.12-0.09-0.19-0.09H4.28c-0.07,0-0.13,0.03-0.19,0.09C4.03,5.24,4,5.3,4,5.37 C4,5.37,4,8.01,4,8.01z M4,8.01V5.09V8.01z"/></svg>
+                                                <span>12.05.24</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Category Slider Nav Button (Prev) -->
+                        <div class="slider_nav_btn slider_nav_btn_prev blog_slider_prev d-flex flex-row align-items-center justify-content-center trans_200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="trans_200"><path d="M576-253.85 349.85-480 576-706.15 613.15-669l-189 189 189 189L576-253.85Z"/></svg>
+                        </div>
+                        <!-- Category Slider Nav Button (Next) -->
+                        <div class="slider_nav_btn slider_nav_btn_next blog_slider_next d-flex flex-row align-items-center justify-content-center trans_200">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="trans_200"><path d="m535.85-480-189-189L384-706.15 610.15-480 384-253.85 346.85-291l189-189Z"/></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+    <footer class="footer">
+        <div class="footer_inner grad_dark">
+            <div class="footer_container d-flex flex-row">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-lg-4 order-2 order-lg-1">
+                            <div class="footer_content d-flex flex-row flex-lg-column">
+                                <div class="footer_logo d-flex flex-row align-items-center">
+                                    <div class="logo"><img src="{% static 'images/logo_36_light.png' %}" alt="Coursette Logo png w36px h36px"></div>
+                                    <span>Coursette</span>
+                                </div>
+                                <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
+                                <!-- Social Links -->
+                                <div class="social_links_container d-flex flex-row">
+                                    <div>
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50"><path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path></svg>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512"><g><polygon points="153.2,135.6 322,377 358.6,377 189.8,135.6"/><path d="M256,20.6C126,20.6,20.6,126,20.6,256S126,491.4,256,491.4S491.4,386,491.4,256S386,20.6,256,20.6z M310.7,394.2 l-73.8-107.4l-92.4,107.4h-23.9l105.7-122.8L120.7,117.6h80.6l69.9,101.7l87.5-101.7h23.9L281.7,234.7h0l109.6,159.5H310.7z"/></g></svg>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50"><path d="M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23s23-10.317,23-23S37.682,2,25,2z M18,35h-4V20h4V35z M16,17 c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2s2,0.895,2,2C18,16.105,17.105,17,16,17z M37,35h-4v-5v-2.5c0-1.925-1.575-3.5-3.5-3.5 S26,25.575,26,27.5V35h-4V20h4v1.816C27.168,20.694,28.752,20,30.5,20c3.59,0,6.5,2.91,6.5,6.5V35z"></path></svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 offset-lg-2 order-1 order-lg-2">
+                            <div class="row">
+                                <div class="col-12 col-sm-6 col-md-4">
+                                    <div class="footer_nav_column">
+                                        <p>Navigation</p>
+                                        <ul>
+                                            <li><a href="#">Home</a></li>
+                                            <li><a href="#">About</a></li>
+                                            <li><a href="#">Courses</a></li>
+                                            <li><a href="#">Blog</a></li>
+                                            <li><a href="#">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4">
+                                    <div class="footer_nav_column">
+                                        <p>Categories</p>
+                                        <ul>
+                                            <li><a href="#">Management</a></li>
+                                            <li><a href="#">Math</a></li>
+                                            <li><a href="#">Painting</a></li>
+                                            <li><a href="#">Poetry</a></li>
+                                            <li><a href="#">Photography</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6 col-md-4">
+                                    <div class="footer_nav_column">
+                                        <p>Need Help?</p>
+                                        <ul>
+                                            <li><a href="#">FAQ</a></li>
+                                            <li><a href="#">Support</a></li>
+                                            <li><a href="#">Contact</a></li>
+                                            <li><a href="#">Latest News</a></li>
+                                            <li><a href="#">Blog</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer_bottom_content d-flex flex-row align-items-center justify-content-between">
+                                <div class="copyright_text">Copyright © 2024 - ABThemes. All Rights Reserved</div>
+                                <div class="footer_bottom_links d-flex flex-row align-items-center">
+                                    <div><a href="#">Privacy Policy</a></div>
+                                    <div><a href="#">Terms of Service</a></div>
+                                    <div><a href="#">Cookies Settings</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+<script src="{% static 'styles/bootstrap-5.3.3/popper.js' %}"></script>
+<script src="{% static 'styles/bootstrap-5.3.3/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TweenMax.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/TimelineMax.min.js' %}"></script>
+<script src="{% static 'plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/animation.gsap.min.js' %}"></script>
+<script src="{% static 'plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+<script src="{% static 'plugins/OwlCarousel2-2.3.4/owl.carousel.js' %}"></script>
+<script src="{% static 'plugins/marquee/jquery.marquee.min.js' %}"></script>
+<script src="{% static 'plugins/easing/easing.js' %}"></script>
+<script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+</body>
+</html>

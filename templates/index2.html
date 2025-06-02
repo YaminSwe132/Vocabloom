@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Coursette</title>
+<title>Vocabloom</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Coursette Project">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="shortcut icon" type="image/x-icon" href="{% static 'images/vocab_icon.ico'%}">
 <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap-5.3.3/bootstrap.min.css' %}">
 <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/owl.carousel.css' %}">
@@ -25,8 +25,8 @@
             <div class="logo_container">
                 <a href="/home/">
                     <div class="d-flex flex-row align-items-center justify-content-start">
-                        <div class="logo"><img src="{% static 'images/logo_36.png' %}" alt="Coursette Logo png w36px h36px"></div>
-                        <div class="logo_text">Coursette</div>
+                        <div class="logo"></div>
+                        <div class="logo_text"><img style="width: 100px; height: 100px;" src="{% static 'images/vocab_icon_dark.png' %}" alt="Coursette Logo png w36px h36px"></div>
                     </div>
                 </a>
             </div>
@@ -1315,9 +1315,9 @@
                     <div class="row">
                         <div class="col-12 col-lg-4 order-2 order-lg-1">
                             <div class="footer_content d-flex flex-row flex-lg-column">
-                                <div class="footer_logo d-flex flex-row align-items-center">
-                                    <div class="logo"><img src="{% static 'images/logo_36_light.png' %}" alt="Coursette Logo png w36px h36px"></div>
-                                    <span>Coursette</span>
+                                <div class="footer_logo d-flex flex-row align-items-center"></div>
+                                    <div class="logo"><span><img src="{% static 'images/vocab_icon_light.png' %}" alt="Coursette Logo png w36px h36px">
+                                    </span>
                                 </div>
                                 <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                                 <!-- Social Links -->

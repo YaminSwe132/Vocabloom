@@ -24,3 +24,6 @@ def about(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def adminHome(request):
+    return render(request,'Admin/index.html')

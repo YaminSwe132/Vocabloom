@@ -28,4 +28,7 @@ urlpatterns = [
     path('blog/', blog),
     path('blog_single/', blog_single),
     path('login/', login),
+
+    #foradmin
+    path('adminIndex/',adminHome),
 ]

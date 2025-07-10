@@ -28,4 +28,26 @@ urlpatterns = [
     path('blog/', blog),
     path('blog_single/', blog_single),
     path('login/', login),
+    path('sign_up/', sign_up),
+    path('lesson/', lesson),
+
+    #text_to_speech
+    path('word/', word),
+    path('text_to_speech/', text_to_speech),
+    path('pronounce/<str:word>/', gtts, name='text_to_speech'),
+    #speech_to_text
+    # path('speech/', speech),
+    # path('speech_to_text/', speech_to_text),
+
+    #certificate
+    path('certificate/', certificate),
+
+    #flash_card
+    path('flash_card/', flash_card2),
+    path('quiz/', quiz),
+    path('mcq/', multiplechoice),
+    path('calendar/', calendar),
+
+    #speaking topics
+    path('speaking_topics/', speaking_topics),
 ]

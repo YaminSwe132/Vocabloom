@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">
+            <div class="col-md-6" id="msgInput">
+                <button type="button" class="btn btn-outline-info mt-2 float-end mx-2" id="sendVoiceBtn">Start</button>
+                    
+            </div>
+            <div id="responseDisplay"></div>
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <script>
+            
+        $("#sendVoiceBtn").click( function () {
+            $.ajax({
+                url: "/speech_to_text/",
+                method: "GET",
+                data: { },
+                success: function (response) {
+                    $("#responseDisplay").html('<div class="alert alert-success" role="alert">' + response.speech + '</div>');
+                },
+                error: function () {
+                    alert('having some error contact to developer');
+                },
+
+            });//end ajax
+
+        });
+    </script>
+</body>
+</html>

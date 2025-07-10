@@ -1,8 +1,8 @@
-{% load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Coursette - Contact</title>
+<title>Vocabloom</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="Coursette Project">
@@ -13,22 +13,82 @@
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/owl.carousel.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/owl.theme.default.css' %}">
 <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.3.4/animate.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/contact.css' %}">
-<link rel="stylesheet" type="text/css" href="{% static 'styles/contact_responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/certificate_responsive.css' %}">
+
+
+<!-- <style>
+    /* Hide all content when printing */
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+      #printable-content, #printable-content * {
+        visibility: visible;
+      }
+
+      #printable-content {
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+
+    .certificate {
+      background-image: url('/static/images/volunteer_certificate.png');
+      background-size: cover;
+      background-position: center;
+      width: 1000px;
+      height: 707px; /* Match image aspect ratio */
+      position: relative;
+      font-family: 'Georgia', serif;
+      margin: 0 auto;
+      margin-top: 15px;
+    }
+
+    .name {
+      position: absolute;
+      top: 51%;
+      width: 100%;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #000;
+    }
+
+    .date {
+      position: absolute;
+      bottom: 22%;
+      right: 25%;
+      font-size: 18px;
+      color: #000;
+    }
+  </style> -->
+
 </head>
 <body>
 
-<div class="super_container">
+<div class="super_container" id="header">
     <!-- Header -->
 	<header class="header">
         <div class="d-flex flex-row align-items-center justify-content-start">
             <div class="logo_container">
                 <a href="/home/">
                     <div class="d-flex flex-row align-items-center justify-content-start">
-                        <div class="logo"><img src="{% static 'images/logo_36.png' %}" alt="Coursette Logo png w36px h36px"></div>
-                        <div class="logo_text">Coursette</div>
+                        <div class="logo"></div>
+                        <div class="logo_text"><img style="width: 100px; height: 100px;" src="{% static 'images/vocab_icon_dark.png' %}" alt="Coursette Logo png w36px h36px"></div>
                     </div>
-                </a> 
+                </a>
             </div>
             <nav class="main_nav">
                 <ul class="d-flex flex-row align-items-center">
@@ -50,7 +110,7 @@
                                 <li><a href="/contact/">Contact</a></li>
                                 <li><a href="/login/">Sign in</a></li>
                             </ul>
-                        </div> 
+                        </div>
                     </li>
                     <li><a href="/blog/">Blog</a></li>
                     <li><a href="/contact/">Contact</a></li>
@@ -272,276 +332,54 @@
             </form>
         </div>
     </div>
-
-    <!-- Home -->
+     <!-- Home -->
     <div class="home">
         <div class="home_outer grad_light">
             <div class="home_inner">
-                <div class="home_background"><img src="{% static 'images/background_1.png' %}" alt=""></div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <div class="home_content">
-                                <h2>Contact Information</h2>
-                                <p>Get in touch with us for any inquiries, support, or collaboration opportunities.</p>
+                <div class="super_container">
+                    <div class="page_gradient">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="outer_container d-flex flex-column align-items-center justify-content-center">
+                                        <div class="content_container d-flex flex-column align-items-center justify-content-center">
+                                            <div class="content_container_inner d-flex flex-column align-items-center justify-content-center">
+                                            <!-- Certificate -->
+                                                 <div id="wrapper">
+                                                    <div class="certificate" id="printable-content">
+                                                        <div class="name">{{name}}</div>
+                                                        <div class="date">{{Date}}</div>
+                                                    </div>
+                                                 </div>
+                                                <!-- div is passed as an argunment to print out as pdf -->
+                                                <button class="button_outline login_button trans_200 mt-1 mb-2 w-25 bg-white" id="printBtn" onclick="printdiv('wrapper')">Print</button>
+                                            </div>
+                                            <!--end of Certificate -->
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+        </div>
+       
+
             </div> 
         </div>
     </div>
 
-    <!-- Company Info -->
-     <div class="company_info_section">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="info_box_container d-flex flex-lg-row flex-column justify-content-between">
-                        <!-- Info Box -->
-                        <div class="info_box d-flex flex-column align-items-center justify-content-center">
-                            <div class="info_box_icon d-flex flex-column align-items-center justify-content-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M745.54-491.77q-3.46-107.08-79.81-183.42-76.35-76.35-183.42-79.81v-52q65 1.54 121.71 26.79 56.71 25.26 99.09 67.64 42.38 42.38 67.63 99.09 25.26 56.71 26.8 121.71h-52Zm-144 0q-3.46-48.08-37.31-82.12-33.85-34.03-81.92-37.11v-52q70 3.08 118.88 52.31 48.89 49.24 52.35 118.92h-52ZM742.61-165q-109.07-9-209.69-57.58-100.61-48.58-182.38-130.34-81.38-81.77-129.46-182.2Q173-635.54 164-744.61q-2-21 12.29-36.7Q190.57-797 212-797h104.46q18.15 0 31.23 10.89 13.08 10.88 18.23 28.42L386.85-673q2.38 13.38-1.5 26.15-3.89 12.77-12.66 20.77l-92.38 89.93q22.3 41.84 49.46 78.77 27.15 36.92 59.51 69.06 31.95 31.94 69.03 59.17t80.08 49.54l94.76-92.54q8.39-8.77 19.24-11.7 10.84-2.92 24.23-.92l80.07 17.62q18.15 5 28.73 18.46 10.58 13.46 10.58 32V-213q0 21.43-16.19 35.71-16.2 14.29-37.2 12.29ZM256.92-586.92l75.39-72.31q1.92-1.54 2.5-4.23.58-2.69-.19-5l-17.55-70.39q-.77-3.07-2.69-4.61-1.92-1.54-5-1.54H223q-2.31 0-3.85 1.54-1.53 1.54-1.53 3.85 3.07 38 13.42 76.3 10.34 38.31 25.88 76.39Zm334 331.69q35.87 15.78 75.01 23.97 39.15 8.18 72.68 12.03 2.31 0 3.85-1.54t1.54-3.85v-86.15q0-3.08-1.54-5t-4.61-2.69l-65-14.08q-2.31-.77-4.04-.19-1.73.58-3.66 2.5l-74.23 75Zm-334-331.69Zm334 331.69Z"/></svg>
-                            </div>
-                            <h3>+859 555 6541</h3>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                        </div>
-                        <!-- Info Box -->
-                        <div class="info_box d-flex flex-column align-items-center justify-content-center">
-                            <div class="info_box_icon d-flex flex-column align-items-center justify-content-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#5f6368"><path d="M180.31-212q-27.01 0-45.66-18.66Q116-249.32 116-276.35v-407.62q0-27.03 18.65-45.53t45.66-18.5h599.38q27.01 0 45.66 18.66Q844-710.68 844-683.65v407.62q0 27.03-18.65 45.53T779.69-212H180.31ZM480-449.69 168-633.31v357q0 5.39 3.46 8.85t8.85 3.46h599.38q5.39 0 8.85-3.46t3.46-8.85v-357L480-449.69Zm0-67.31 305.85-179h-611.7L480-517ZM168-633.31V-696v419.69q0 5.39 3.46 8.85t8.85 3.46H168v-369.31Z"/></svg>
-                            </div>
-                            <h3>mail@company.com</h3>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                        </div>
-                        <!-- Info Box -->
-                        <div class="info_box d-flex flex-column align-items-center justify-content-center">
-                            <div class="info_box_icon d-flex flex-column align-items-center justify-content-center">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#5f6368"><path d="M480.28-485.39q26.64 0 45.33-18.97 18.7-18.97 18.7-45.61t-18.98-45.34Q506.36-614 479.72-614t-45.33 18.97q-18.7 18.98-18.7 45.62 0 26.64 18.98 45.33 18.97 18.69 45.61 18.69ZM480-184.46q114.38-100.08 178.15-195.08 63.77-95 63.77-167.54 0-105.38-68.5-175.34-68.5-69.96-173.42-69.96-104.92 0-173.42 69.96-68.5 69.96-68.5 175.34 0 72.54 63.77 167.54 63.77 95 178.15 195.08Zm0 68.84Q333.03-240.57 259.55-348.21q-73.47-107.64-73.47-198.87 0-122.46 82.07-209.69Q350.23-844 479.5-844q129.27 0 211.85 87.23 82.57 87.23 82.57 209.69 0 91.23-72.96 198.43Q628-241.46 480-115.62Zm0-434.07Z"/></svg>
-                            </div>
-                            <h3>Amsterdam, NL</h3>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-     </div>
-     
-    <!-- Contact Form Section -->
-    <div class="contact_form_section">
-        <div class="container">
-            <div class="row eq-height">
-                <div class="col-xl-6 col-12">
-                    <div class="contact_form_pic"><img src="{% static 'images/contact.jpg' %}" alt=""></div>
-                </div>
-                <div class="col-xl-6 col-12">
-                    <div class="contact_form_split d-flex flex-column align-items-start justify-content-center">
-                        <div class="contact_form_title">
-                            <h3>Get in touch</h3>
-                            <p>Our team would love to hear from you.</p>
-                        </div>
-                        <div class="contact_form_container">
-                            <form class="contact_form" action="#">
-                                <div class="d-flex flex-md-row flex-column justify-content-between">
-                                    <div class="d-flex flex-column">
-                                        <label for="contact_input_name">Name</label>
-                                        <input type="text" class="contact_input" id="contact_input_name" required placeholder="Name">
-                                    </div>
-                                    <div class="d-flex flex-column">
-                                        <label for="contact_input_email">Email</label>
-                                        <input type="text" class="contact_input" id="contact_input_email" required placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="contact_textarea_container d-flex flex-column">
-                                    <label for="contact_textarea">Message</label>
-                                    <textarea name="contact_textarea" id="contact_textarea" class="contact_textarea" placeholder="Your message"></textarea>
-                                </div>
-                                <div class="contact_button_container">
-                                    <button class="contact_button d-flex flex-row align-items-center justify-content-center trans_200">
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M164-222v-516l648.46 258L164-222Zm52-77 454-181-454-181v116.69L408.92-480 216-415.69V-299Zm0 0v-362 362Z"/></svg>
-                                        <span>Send Message</span>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- FAQ -->
-     <div class="faq">
-        <div class="faq_inner">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <h3 class="contact_section_title">FAQ</h3>
-                        <!-- Accordions -->
-                        <div class="accordions_col_container d-flex flex-lg-row flex-column justify-content-between flex-wrap">
-                            <div class="accordions">
-                                <div class="accordion_container">
-                                    <div class="accordion d-flex flex-row align-items-center">
-                                        <div class="accordion_arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-346.85 253.85-573 291-610.15l189 189 189-189L706.15-573 480-346.85Z"/></svg>
-                                        </div>
-                                        <div>Do you provide customer support?</div>
-                                    </div>
-                                    <div class="accordion_panel">
-                                        <div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion_container">
-                                    <div class="accordion d-flex flex-row align-items-center">
-                                        <div class="accordion_arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-346.85 253.85-573 291-610.15l189 189 189-189L706.15-573 480-346.85Z"/></svg>
-                                        </div>
-                                        <div>How do I enroll in a course?</div>
-                                    </div>
-                                    <div class="accordion_panel">
-                                        <div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion_container">
-                                    <div class="accordion d-flex flex-row align-items-center">
-                                        <div class="accordion_arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-346.85 253.85-573 291-610.15l189 189 189-189L706.15-573 480-346.85Z"/></svg>
-                                        </div>
-                                        <div>What payment methods are accepted?</div>
-                                    </div>
-                                    <div class="accordion_panel">
-                                        <div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion_container">
-                                    <div class="accordion d-flex flex-row align-items-center">
-                                        <div class="accordion_arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-346.85 253.85-573 291-610.15l189 189 189-189L706.15-573 480-346.85Z"/></svg>
-                                        </div>
-                                        <div>Can I access courses offline?</div>
-                                    </div>
-                                    <div class="accordion_panel">
-                                        <div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordions">
-                                <div class="accordion_container">
-                                    <div class="accordion d-flex flex-row align-items-center">
-                                        <div class="accordion_arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-346.85 253.85-573 291-610.15l189 189 189-189L706.15-573 480-346.85Z"/></svg>
-                                        </div>
-                                        <div>Are there any prerequisites?</div>
-                                    </div>
-                                    <div class="accordion_panel">
-                                        <div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion_container">
-                                    <div class="accordion d-flex flex-row align-items-center">
-                                        <div class="accordion_arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-346.85 253.85-573 291-610.15l189 189 189-189L706.15-573 480-346.85Z"/></svg>
-                                        </div>
-                                        <div>How can I contact support?</div>
-                                    </div>
-                                    <div class="accordion_panel">
-                                        <div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion_container">
-                                    <div class="accordion d-flex flex-row align-items-center">
-                                        <div class="accordion_arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-346.85 253.85-573 291-610.15l189 189 189-189L706.15-573 480-346.85Z"/></svg>
-                                        </div>
-                                        <div>Do you offer refunds?</div>
-                                    </div>
-                                    <div class="accordion_panel">
-                                        <div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="accordion_container">
-                                    <div class="accordion d-flex flex-row align-items-center">
-                                        <div class="accordion_arrow">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M480-346.85 253.85-573 291-610.15l189 189 189-189L706.15-573 480-346.85Z"/></svg>
-                                        </div>
-                                        <div>How long do I have access to a course?</div>
-                                    </div>
-                                    <div class="accordion_panel">
-                                        <div>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-     </div>
-
-     <!-- CTA -->
-      <div class="cta_3">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="cta_3_container d-flex flex-column align-items-center justify-content-center">
-                        <div>
-                            <h2>Let’s start learning something new</h2>
-                            <p>Join over 60,000 students already learning with Coursette</p>
-                            <div class="cta_3_buttons d-flex flex-row align-items-center justify-content-center">
-                                <!-- Button Fill -->
-                                <div class="button_fill trans_200">
-                                    <a href="#">
-                                        <div class="d-flex flex-row align-items-center">
-                                            <span>Get started</span>
-                                        </div>
-                                    </a>
-                                </div>
-                                <!-- Button Outlline -->
-                                <div class="button_outline trans_200">
-                                    <a href="/courses/">
-                                        <div class="d-flex flex-row align-items-center">
-                                            <span>Contact us</span>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-
     <!-- Footer -->
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer_inner grad_dark">
             <div class="footer_container d-flex flex-row">
                 <div class="container">
                     <div class="row">
                         <div class="col-12 col-lg-4 order-2 order-lg-1">
                             <div class="footer_content d-flex flex-row flex-lg-column">
-                                <div class="footer_logo d-flex flex-row align-items-center">
-                                    <div class="logo"><img src="{% static 'images/logo_36_light.png' %}" alt="Coursette Logo png w36px h36px"></div>
-                                    <span>Coursette</span>
+                                <div class="footer_logo d-flex flex-row align-items-center"></div>
+                                    <div class="logo"><span><img src="{% static 'images/vocab_icon_light.png' %}" alt="Coursette Logo png w36px h36px">
+                                    </span>
                                 </div>
                                 <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis.</p>
                                 <!-- Social Links -->
@@ -549,20 +387,20 @@
                                     <div>
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50"><path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path></svg>
-                                        </a> 
+                                        </a>
                                     </div>
                                     <div>
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512"><g><polygon points="153.2,135.6 322,377 358.6,377 189.8,135.6"/><path d="M256,20.6C126,20.6,20.6,126,20.6,256S126,491.4,256,491.4S491.4,386,491.4,256S386,20.6,256,20.6z M310.7,394.2 l-73.8-107.4l-92.4,107.4h-23.9l105.7-122.8L120.7,117.6h80.6l69.9,101.7l87.5-101.7h23.9L281.7,234.7h0l109.6,159.5H310.7z"/></g></svg>
-                                        </a> 
+                                        </a>
                                     </div>
                                     <div>
                                         <a href="#">
                                             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 50 50"><path d="M25,2C12.318,2,2,12.317,2,25s10.318,23,23,23s23-10.317,23-23S37.682,2,25,2z M18,35h-4V20h4V35z M16,17 c-1.105,0-2-0.895-2-2c0-1.105,0.895-2,2-2s2,0.895,2,2C18,16.105,17.105,17,16,17z M37,35h-4v-5v-2.5c0-1.925-1.575-3.5-3.5-3.5 S26,25.575,26,27.5V35h-4V20h4v1.816C27.168,20.694,28.752,20,30.5,20c3.59,0,6.5,2.91,6.5,6.5V35z"></path></svg>
-                                        </a> 
+                                        </a>
                                     </div>
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                         <div class="col-12 col-lg-6 offset-lg-2 order-1 order-lg-2">
                             <div class="row">
@@ -640,6 +478,23 @@
 <script src="{% static 'plugins/marquee/jquery.marquee.min.js' %}"></script>
 <script src="{% static 'plugins/easing/easing.js' %}"></script>
 <script src="{% static 'plugins/parallax-js-master/parallax.min.js' %}"></script>
-<script src="{% static 'js/contact.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
+<script src="{% static 'js/login.js' %}"></script>
+
+<script>
+//html to pdf for certificate
+function printdiv(elem) {
+  var header_str = '<html><head><title>' + document.title  + '</title></head><body>';
+  var footer_str = '</body></html>';
+  var new_str = document.getElementById(elem).innerHTML;
+  console.log(new_str);
+  
+  var old_str = document.body.innerHTML;
+  document.body.innerHTML = header_str + new_str + footer_str;
+  window.print();
+  document.body.innerHTML = old_str;
+  return false;
+}
+</script>
 </body>
 </html>

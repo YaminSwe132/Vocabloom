@@ -1,0 +1,312 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f7fa;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 40px;
+  min-height: 100vh;
+}
+
+.calendar-container {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header button {
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#month-year {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #3f37c9;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+
+.day, .date {
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 500;
+}
+
+.day {
+  background: #eaeaea;
+}
+
+.date {
+  background: #f0f0ff;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.date:hover {
+  background: #4895ef;
+  color: white;
+}
+
+.date.has-note {
+  background-color: #3f37c9;
+  color: white;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.3);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  position: relative;
+}
+
+.modal-content textarea {
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+  padding: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  width: 100%;
+  background: #4361ee;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+/* Add to your existing styles */
+.week-view {
+    display: none;
+    flex: 1;
+    padding: 0 20px 20px;
+}
+
+.week-view.active {
+    display: block;
+}
+
+.week-view-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.week-view-header h2 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.week-days-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.week-day-column {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 8px;
+    min-height: 500px;
+}
+
+.week-day-column.today {
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.week-day-header {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 8px;
+}
+
+.week-day-name {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.week-day-number {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.week-event {
+    font-size: 0.75rem;
+    padding: 6px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    border-left: 3px solid;
+    transition: all 0.3s ease;
+}
+
+.week-event:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.week-event-title {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.week-event-time {
+    font-size: 0.7rem;
+    color: #6c757d;
+}
+
+.time-slot-error {
+    color: var(--danger-color);
+    font-size: 0.8rem;
+    margin-top: 4px;
+    display: none;
+}
+/* Weekly View Styles */
+.week-view {
+    display: none;
+    flex: 1;
+    padding: 0 20px 20px;
+}
+
+.week-view.active {
+    display: block;
+}
+
+.week-view-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.week-view-header h2 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+.week-days-container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.week-day-column {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 8px;
+    min-height: 500px;
+}
+
+.week-day-column.today {
+    background-color: rgba(67, 97, 238, 0.05);
+}
+
+.week-day-header {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 8px;
+}
+
+.week-day-name {
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+.week-day-number {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.week-event {
+    font-size: 0.75rem;
+    padding: 6px;
+    margin-bottom: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    border-left: 3px solid;
+    transition: all 0.3s ease;
+}
+
+.week-event:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.week-event-title {
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.week-event-time {
+    font-size: 0.7rem;
+    color: #6c757d;
+}
+
+/* Delete button in modal */
+.delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-right: auto;
+}
+
+.delete-btn:hover {
+    background-color: #d11a4a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

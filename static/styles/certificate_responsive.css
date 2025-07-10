@@ -1,0 +1,92 @@
+/* Hide all content when printing */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  #printable-content,
+  #printable-content * {
+    visibility: visible;
+  }
+
+  #printable-content {
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* When printing, fix the size to the intended print dimensions */
+    width: 1000px;
+    height: 707px;
+    margin: 0; /* Remove any margins that might shift it */
+  }
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.certificate {
+  background-image: url('/static/images/volunteer_certificate.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  font-family: 'Lora', serif;
+  margin: 15px auto; /* Centering with some top margin */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+
+  /* Responsive sizing for screen display */
+  width: 90vw; /* Use viewport width for responsiveness */
+  max-width: 1000px; /* Cap at the original intended print width */
+  height: 0; /* Set height to 0 to use padding-bottom for aspect ratio */
+  padding-bottom: 69.8%; /* (707 / 1000) * 100% to maintain aspect ratio */
+}
+
+.name {
+  position: absolute;
+  top: 53%;
+  width: 100%;
+  text-align: center;
+  font-size: 2.7vw; /* Responsive font size based on viewport width */
+  /* font-weight: bold; */
+  color: #000;
+  transform: translateY(-50%); /* Vertically center the text */
+}
+
+.date {
+  position: absolute;
+  bottom: 21%;
+  right: 26%; /* Adjust right for better responsiveness */
+  font-size: 1vw; /* Responsive font size based on viewport width */
+  color: #000;
+}
+
+/* Adjust font sizes for smaller screens if needed, otherwise vw units should handle it well */
+@media (max-width: 768px) {
+  .name {
+    font-size: 3.7vw; /* Slightly smaller for tablets */
+  }
+  .date {
+    font-size: 1.4vw; /* Slightly smaller for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 3.2vw; /* Larger relative to viewport for mobile */
+  }
+  .date {
+    font-size: 1.5vw; /* Larger relative to viewport for mobile */
+  }
+}
+
+#printBtn {
+  color: #5965d4;
+  z-index: 10; /* Set the desired text color for the print button */
+}

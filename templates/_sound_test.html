@@ -1,0 +1,33 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- sound testing -->
+    <form action="/text_to_speech/" method="post">
+        {% csrf_token %}
+        <label for="word">Word : </label>
+        <input type="text" name="word" id="word">
+        <button type="submit">Listen</button>
+    </form>
+
+    <figure>
+        <figcaption>Listen to the T-Rex:</figcaption>
+        <audio controls src="{% static '/media/speech.mp3' %}"></audio>
+        <!-- <a href="{% static '/media/speech.mp3' %}"> Download audio </a> -->
+    </figure>
+    <!-- <form action="/speech_to_text/" method="post">
+        {% csrf_token %}
+        <button type="submit">Speak</button>
+    </form>
+    <div>
+        <p>{{definition}}</p> -->
+        <!-- <p>{{pos}}</p>
+        <p>{{eg}}</p> -->
+    </div>
+</body>
+</html>

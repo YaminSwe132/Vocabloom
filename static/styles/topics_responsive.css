@@ -1,0 +1,142 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f9fafc;
+      color: #222;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+      .home {
+    flex: 1 0 auto;
+    /* padding-bottom: 40px; prevent overlap */
+  }
+
+    .join-card {
+      display: flex;
+      justify-content: space-between;
+      background: #fff;
+      border: 2px solid #fdd0df;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    .join-card .badge {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: #d6004c;
+      color: white;
+      padding: 5px 15px;
+      font-weight: bold;
+      font-size: 14px;
+      border-top-right-radius: 10px;
+      border-bottom-left-radius: 10px;
+    }
+
+    .join-left {
+      flex: 1;
+    }
+
+    .join-left h2 {
+      font-size: 26px;
+      margin-bottom: 10px;
+      color: #08295b;
+    }
+
+    .join-left .next-topic {
+      margin-bottom: 10px;
+    }
+
+    .join-left .next-topic span {
+      font-weight: 600;
+    }
+
+    .join-left .countdown {
+      color: #c1121f;
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+    }
+
+    .join-left .cta-button {
+      background: #08295b;
+      color: white;
+      padding: 12px 24px;
+      border: none;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .join-image {
+      flex: 1;
+      text-align: right;
+    }
+
+    .join-image img {
+      max-height: 160px;
+    }
+
+    .signin-text {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 0.95rem;
+    }
+
+    .signin-text a {
+      color: #08295b;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .next-topic-preview {
+      margin: 30px 0;
+      background: #fff;
+      padding: 15px 25px;
+      border-radius: 14px;
+      font-size: 1.1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    .next-topic-preview p {
+      margin-top: 5px;
+      color: #555;
+    }
+
+    .session-list h3 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+
+    .session-item {
+      background: white;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 15px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .session-item time {
+      font-weight: 600;
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    .session-item .topic {
+      margin-top: 8px;
+    }
+
+    .session-item .topic strong {
+      font-weight: 600;
+      color: #222;
+    }

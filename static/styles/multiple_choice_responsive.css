@@ -1,0 +1,214 @@
+
+        /* Add these styles to card_responsive.css */
+
+.cards-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    height: 400px;
+    margin-bottom: 30px;
+}
+
+.card {
+    width: 100%;
+    min-height: 350px;
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+.card.question {
+    z-index: 2;
+}
+
+.card.definition {
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.slide-left {
+    transform: translateX(calc(-50% - 220px));
+}
+
+.card.show-definition {
+    transform: translateX(calc(-50% + 220px));
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.word {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--secondary-color);
+}
+
+.phonetic {
+    font-size: 1.2rem;
+    color: #6c757d;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.part-of-speech {
+    display: inline-block;
+    background: #e0f7fa;
+    color: #00838f;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.definition-text {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.question-text {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option {
+    padding: 15px;
+    background: #ecf0f1;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
+
+.option:hover {
+    background: #d5dbdb;
+    transform: translateY(-2px);
+}
+
+.option.correct {
+    background: #a5d6a7;
+    color: #2e7d32;
+}
+
+.option.incorrect {
+    background: #ef9a9a;
+    color: #c62828;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Medium screens */
+    .app-title {
+        font-size: 1.8rem;
+    }
+    
+    .cards-container {
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+    
+    .card {
+        width: 100%;
+        min-height: 300px;
+        padding: 25px;
+    }
+    .word, .word-display {
+        font-size: 2rem;
+    }
+    
+    .question-text {
+        font-size: 1.2rem;
+    }
+    
+    .definition-text, .definition {
+        font-size: 1.1rem;
+    }
+    
+    .option {
+        padding: 12px;
+        font-size: 1rem;
+    }
+    
+    /* Adjust animations for vertical layout */
+    .card.slide-left {
+        transform: translateY(calc(-100% - 20px));
+    }
+    .card.show-definition {
+        transform: translateY(calc(100% + 20px));
+    }
+}
+
+@media (max-width: 480px) {
+    /* Small screens */
+    .app-title {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        min-height: 280px;
+        padding: 20px;
+    }
+    
+    .word, .word-display {
+        font-size: 1.8rem;
+    }
+    
+    .phonetic, .british_pronunciation {
+        font-size: 1rem;
+    }
+    .question-text {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+    
+    .definition-text, .definition {
+        font-size: 1rem;
+    }
+    
+    .option {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .nav-btn {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+    }
+     /* Adjust card spacing for very small screens */
+    .cards-container {
+        gap: 15px;
+    }
+    
+    .card.slide-left {
+        transform: translateY(calc(-100% - 15px));
+    }
+    
+    .card.show-definition {
+        transform: translateY(calc(100% + 15px));
+    }
+}
